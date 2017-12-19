@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>GenerateDQSAnnotator_Input</Name>
+  <Type>transform</Type>
+  <File>GenerateDQSAnnotator_Input.gxp</File>
+  <Description></Description>
+  <GUID>CB996AC0380F8B07B17757A5AC333601</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3237324531043128310632252993121)</Password>
+    <ImportDate>2017-12-13T17:30:05.498+01:00</ImportDate>
+  </ImportedFrom>
+  <Dependencies>
+    <Dependency>
+      <Name>DQProcessing_output</Name>
+      <Type>schema</Type>
+      <GUID>2FE68F851C235CDEBCC340CFBE82ABDF</GUID>
+      <Path>/DQCollector_TST/Schemas/DQProcessing_output.xsd/DQProcessing_output.xsd</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>DQSAnnotator_input</Name>
+      <Type>schema</Type>
+      <GUID>1BDA5C242E2FCE92CFA8359BC9A32406</GUID>
+      <Path>/DQCollector_TST/Schemas/DQSAnnotator_input.xsd/DQSAnnotator_input.xsd</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

@@ -1,0 +1,30 @@
+Name=Start  Type=Start  InEdge=OnSuccess  From=begin  Not nested
+Registers
+     ADDED > doclocation         [SYS]   config_en
+     ADDED > engine              [SYS]   DQSConnector
+     ADDED > iway.channel        [SYS]   ExecProcess
+     ADDED > iway.channelname    [SYS]   ExecProcess
+     ADDED > iway.config         [SYS]   DQSConnector
+     ADDED > iway.inletname      [SYS]   
+     ADDED > iway.lastnode       [SYS]   Start
+     ADDED > iway.listener       [SYS]   ExecProcess
+     ADDED > iway.pid            [SYS]   2580
+     ADDED > iway.priornode      [SYS]   ??
+     ADDED > iway.serverfullhost [SYS]   AZU-P-OPX-017
+     ADDED > iway.serverhost     [SYS]   AZU-P-OPX-017
+     ADDED > iway.serverip       [SYS]   10.15.1.192
+     ADDED > iway.startup.time   [SYS]   1511431688760
+     ADDED > iway.workdir        [SYS]   C:/iWay/iway7/config/DQSConnector
+     ADDED > iwayconfig          [SYS]   DQSConnector
+     ADDED > iwaydata            [SYS]   C:/iWay/iway7/
+     ADDED > iwayhome            [SYS]   C:/iWay/iway7/
+     ADDED > iwayversion         [SYS]   7.0.7
+     ADDED > iwayworkdir         [SYS]   C:/iWay/iway7/config/DQSConnector
+     ADDED > jce.unlimited       [SYS]   false
+     ADDED > locale              [SYS]   en_gb
+     ADDED > name                [SYS]   ExecProcess
+     ADDED > protocol            [SYS]   Lcl
+     ADDED > iway.flowname       [DOC]   deletefiles
+     ADDED > iway.threadname     [DOC]   W.ExecProcess.1~deletefiles
+     ADDED > tid                 [DOC]   dc7607cb-916d-43b5-8a81-f1318d9491cf
+Object type does not support document display

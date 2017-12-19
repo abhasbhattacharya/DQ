@@ -1,0 +1,32 @@
+Name=End  Type=Terminate  InEdge=OnCompletion  From=Ebiquity_Housekeeping__Datafiles_Pf  Not nested
+Registers
+             doclocation         [SYS]   config_en
+             engine              [SYS]   DQSConnector
+             iway.channel        [SYS]   ExecProcess
+             iway.channelname    [SYS]   ExecProcess
+             iway.config         [SYS]   DQSConnector
+             iway.inletname      [SYS]   
+             iway.lastnode       [SYS]   End
+             iway.listener       [SYS]   ExecProcess
+             iway.pid            [SYS]   2580
+             iway.priornode      [SYS]   Ebiquity_Housekeeping__Datafiles_Pf
+             iway.serverfullhost [SYS]   AZU-P-OPX-017
+             iway.serverhost     [SYS]   AZU-P-OPX-017
+             iway.serverip       [SYS]   10.15.1.192
+             iway.startup.time   [SYS]   1511431688760
+             iway.workdir        [SYS]   C:/iWay/iway7/config/DQSConnector
+             iwayconfig          [SYS]   DQSConnector
+             iwaydata            [SYS]   C:/iWay/iway7/
+             iwayhome            [SYS]   C:/iWay/iway7/
+             iwayversion         [SYS]   7.0.7
+             iwayworkdir         [SYS]   C:/iWay/iway7/config/DQSConnector
+             jce.unlimited       [SYS]   false
+             locale              [SYS]   en_gb
+             name                [SYS]   ExecProcess
+             protocol            [SYS]   Lcl
+             currentime          [DOC]   1512476973354
+             iway.flowname       [DOC]   Ebiquity_Housekeeping_Pf
+             iway.threadname     [DOC]   W.ExecProcess.1~Ebiquity_Housekeeping_Pf
+             lastmod             [DOC]   file
+             tid                 [DOC]   e6e69566-526f-497f-91e4-44b185cd1e2e
+Object type does not support document display

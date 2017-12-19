@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+   <command>cmd /C dir /s C:\iWay\dqs\workspace\DQSDEV\*.comp</command>
+   <exitcode>0</exitcode>
+   <cmdoutput>
+ Volume in drive C has no label.
+ Volume Serial Number is E8AC-325E
+
+ Directory of C:\iWay\dqs\workspace\DQSDEV
+
+02/11/2017  20:13            19,267 Serial_demo_comp V1.4.comp
+20/11/2017  18:54            23,212 Serial_Transpose_Plan.comp
+30/11/2017  10:00            11,680 Training.comp
+06/12/2017  08:55            11,793 UK_IMG_HSBC_2017.comp
+               4 File(s)         65,952 bytes
+
+ Directory of C:\iWay\dqs\workspace\DQSDEV\Component_folder
+
+18/11/2017  17:29             7,583 Validate_Brand_V_1_4.comp
+20/11/2017  18:57             7,704 Validate_Client_v_1_4.comp
+15/11/2017  19:20             7,221 Validate_Client_v_1_5.comp
+20/11/2017  17:33             8,453 Validate_End_date_V_1_4.comp
+20/11/2017  17:51             7,735 Validate_Planned_cost_V_1_4.comp
+20/11/2017  17:51             7,852 Validate_Programatic_v_1_4.comp
+20/11/2017  18:40             8,499 Validate_start_date_V_1_4.comp
+               7 File(s)         55,047 bytes
+
+ Directory of C:\iWay\dqs\workspace\DQSDEV\Germany
+
+20/11/2017  18:54            23,212 Serial_Transpose_Plan.comp
+               1 File(s)         23,212 bytes
+
+ Directory of C:\iWay\dqs\workspace\DQSDEV\NL
+
+30/11/2017  10:00            11,680 Training.comp
+               1 File(s)         11,680 bytes
+
+ Directory of C:\iWay\dqs\workspace\DQSDEV\UK
+
+06/12/2017  08:55            11,793 UK_IMG_HSBC_2017.comp
+               1 File(s)         11,793 bytes
+
+     Total Files Listed:
+              14 File(s)        167,684 bytes
+               0 Dir(s)  111,412,092,928 bytes free</cmdoutput>
+</status>

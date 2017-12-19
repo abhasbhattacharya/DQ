@@ -1,0 +1,46 @@
+Name=filedir  Type=Agent  InEdge=OnCompletion  From=Start  Not nested
+Registers
+             doclocation         [SYS]   config_en
+             engine              [SYS]   DQSConnector
+             iway.channel        [SYS]   ExecProcess
+             iway.channelname    [SYS]   ExecProcess
+             iway.config         [SYS]   DQSConnector
+             iway.inletname      [SYS]   
+             iway.lastnode       [SYS]   filedir
+             iway.listener       [SYS]   ExecProcess
+             iway.pid            [SYS]   2580
+             iway.priornode      [SYS]   Start
+             iway.serverfullhost [SYS]   AZU-P-OPX-017
+             iway.serverhost     [SYS]   AZU-P-OPX-017
+             iway.serverip       [SYS]   10.15.1.192
+             iway.startup.time   [SYS]   1511431688760
+             iway.workdir        [SYS]   C:/iWay/iway7/config/DQSConnector
+             iwayconfig          [SYS]   DQSConnector
+             iwaydata            [SYS]   C:/iWay/iway7/
+             iwayhome            [SYS]   C:/iWay/iway7/
+             iwayversion         [SYS]   7.0.7
+             iwayworkdir         [SYS]   C:/iWay/iway7/config/DQSConnector
+             jce.unlimited       [SYS]   false
+             locale              [SYS]   en_gb
+             name                [SYS]   ExecProcess
+             protocol            [SYS]   Lcl
+             iway.flowname       [DOC]   Ebiquity_Housekeeping_Pf
+             iway.threadname     [DOC]   W.ExecProcess.1~Ebiquity_Housekeeping_Pf
+             tid                 [DOC]   e6e69566-526f-497f-91e4-44b185cd1e2e
+Content of document
+	Form=xml
+	<?xml version="1.0" encoding="UTF-8" ?>
+<dir base="C:\Projects" count="12">
+   <item type="file" lastmod="1512130456664" lastmodstr="1 Dec 2017 12:14:16 GMT">.OUTPUT_Data_Collection_Challenges_28_06_16.csv.metaData</item>
+   <item type="file" lastmod="1512126485693" lastmodstr="1 Dec 2017 11:08:05 GMT">.OUTPUT_Operational_Support_for_DQS_Connect.csv.metaData</item>
+   <item type="file" lastmod="1512388533609" lastmodstr="4 Dec 2017 11:55:33 GMT">.OUTPUT_Test_Data_File_Fail_with_Criticals23.csv.metaData</item>
+   <item type="file" lastmod="1512141750274" lastmodstr="1 Dec 2017 15:22:30 GMT">.OUTPUT_Test_Data_File_Fail_with_Criticals4.csv.metaData</item>
+   <item type="file" lastmod="1512148734255" lastmodstr="1 Dec 2017 17:18:54 GMT">.OUTPUT_Test_Data_File_Fail_with_Criticals_and_Warnings.csv.metaData</item>
+   <item type="file" lastmod="1512391167680" lastmodstr="4 Dec 2017 12:39:27 GMT">.OUTPUT_Test_Data_File_Fail_with_Criticals_and_Warnings4.csv.metaData</item>
+   <item type="file" lastmod="1512390792132" lastmodstr="4 Dec 2017 12:33:12 GMT">.OUTPUT_Test_Data_File_Fail_with_Criticals_and_Warnings8.csv.metaData</item>
+   <item type="file" lastmod="1512149244838" lastmodstr="1 Dec 2017 17:27:24 GMT">.OUTPUT_Test_Data_File_Pass_2.csv.metaData</item>
+   <item type="file" lastmod="1512143274356" lastmodstr="1 Dec 2017 15:47:54 GMT">.OUTPUT_Training_Pass2.csv.metaData</item>
+   <item type="file" lastmod="1512140911229" lastmodstr="1 Dec 2017 15:08:31 GMT">.OUTPUT_Training_Pass8.csv.metaData</item>
+   <item type="file" lastmod="1512140985385" lastmodstr="1 Dec 2017 15:09:45 GMT">.OUTPUT_Training_Warning_Only.csv.metaData</item>
+   <item type="file" lastmod="1512143533020" lastmodstr="1 Dec 2017 15:52:13 GMT">.OUTPUT_Training_Warning_Only_2.csv.metaData</item>
+</dir>

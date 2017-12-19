@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<c2ib_AdhocDQCheck_output>
+	<Status>Success</Status>
+	<StatusCode>0</StatusCode>
+	<TemplateFileLocation>C:\Projects</TemplateFileLocation>
+	<planReference>Plans\SamplePlan.plan</planReference>
+	<StatusMessage>Template File retrieved from Connect &amp; submitted to DQS for processing.</StatusMessage>
+</c2ib_AdhocDQCheck_output>

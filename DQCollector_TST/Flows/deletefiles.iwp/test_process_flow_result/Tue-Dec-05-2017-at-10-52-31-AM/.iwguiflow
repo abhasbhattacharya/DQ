@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IWAY xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.iwaysoftware.com/designer/model">
+  <SERVER NAME="iWay Registry">
+    <PROCESSFLOW DESCRIPTION="" IWAYVERSION="7.0.7" NAME="deletefiles" TIMEOUT="0">
+      <OBJECTS>
+        <OBJECT CLASS="start" DESCRIPTION="Start Object" ETAP="false" ID="start" KEY="1" NAME="Start" POS_LEFT="28" POS_TOP="187" TYPE="FLOWCHART_STARTUP_START">
+          <USER>
+            <PROPERTIES>
+              <GROUP NAME="General">
+                <PROPERTYITEM DISPLAY="No" ITEMTYPE="boolean" LABEL="Debug" NAME="Debug" REQUIRED="false" VALUE="true" VALUETYPE="boolean"/>
+              </GROUP>
+            </PROPERTIES>
+          </USER>
+          <RUNTIMEVARIABLES/>
+        </OBJECT>
+        <OBJECT CLASS="end" DESCRIPTION="End Object" ETAP="false" ID="end" KEY="2" NAME="End" POS_LEFT="279" POS_TOP="188" TYPE="FLOWCHART_STARTUP_END">
+          <USER>
+            <PROPERTIES>
+              <GROUP NAME="General"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDPFFileReadAgent" DEACTIVATE="false" DESCRIPTION="File Object" ETAP="false" KEY="4" NAME="DeleteFiles" POS_LEFT="146" POS_TOP="191" TYPE="FLOWCHART_STARTUP_FILE" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="File to be read.  Relative or absolute file paths are supported explicitly or through a SREG or XPath expression evaluated using the incoming document" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Name of File" NAME="name" REQUIRED="true" VALUE="C:\\Projects\*.*" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Whether to delete the file read on a successful read" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Delete after read" NAME="delete" REQUIRED="true" VALUE="true" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="Format of the input data" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Format" NAME="format" REQUIRED="true" VALUE="flat" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Name of the XML tag to wrap the data read in.  Required if format is flat" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Tag" NAME="tag" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Character set encoding to be performed on input.  Base 64 is required for flat binary data" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Character Set Encoding" NAME="encode" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Whether to embed the data from the read operation into the input document" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Embed" NAME="embed" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="Base64 encode the read in document when embedding" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Base64 Encode" NAME="base64Encode" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="Where in the input document the input data should be embedded" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Parent Tag" NAME="parent" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If non-zero, will retry the operation n times at one-second intervals" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Retry" NAME="retry" REQUIRED="false" VALUE="0" VALUETYPE="integer"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+      </OBJECTS>
+      <RELATIONS STARTINSTANCE="1">
+        <RELATION COMPLETION="OnCompletion" EVENT="" FROMINSTANCE="1" LINEDESCRIPTION="" LINEDISPLAY="OnCompletion" LINEID="FLOWCHART_DEFAULT_LINE" TOINSTANCE="4">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="4" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="2">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+      </RELATIONS>
+      <TEXTLABELS/>
+      <ROUTER TYPE="DesignerShortestPathRouter"/>
+    </PROCESSFLOW>
+  </SERVER>
+  <GLOBALVARIABLES/>
+</IWAY>

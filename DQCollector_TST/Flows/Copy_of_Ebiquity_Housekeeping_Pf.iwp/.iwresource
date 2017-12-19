@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>Copy_of_Ebiquity_Housekeeping_Pf</Name>
+  <Type>process</Type>
+  <File>Copy_of_Ebiquity_Housekeeping_Pf.iwp</File>
+  <Description></Description>
+  <GUID>5102D277ECF0940CE08E47AAC590CE06</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3189319731043128321832252993233)</Password>
+    <ImportDate>2017-11-20T08:52:22.297+01:00</ImportDate>
+  </ImportedFrom>
+  <Dependencies>
+    <Dependency>
+      <Name>Ebiquity_Housekeeping__Datafiles_Pf</Name>
+      <Type>process</Type>
+      <GUID>860C09B09E12A0C26710FBFC949DA741</GUID>
+      <Path>/DQCollector_TST/Flows/Ebiquity_Housekeeping__Datafiles_Pf.iwp/Ebiquity_Housekeeping__Datafiles_Pf.iwp</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

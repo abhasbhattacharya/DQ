@@ -1,0 +1,114 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.7" armdebug="false">ib2c_ReturnDQResult_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug">false</parm>
+            <return>$complete
+               <agent key="6" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetPrimarySREGs" active="true">com.ibi.agents.XDSREGAgent
+                  <parm name="regtype">doc</parm>
+                  <parm name="scope">global</parm>
+                  <parm name="eval">false</parm>
+                  <parm name="nolog">false</parm>
+                  <parm name="nomarshall">false</parm>
+                  <parm name="wanteos">false</parm>
+                  <parm name="sessionToken">_xpath(//ExecuteScript/sessionToken)</parm>
+                  <parm name="clientSessionToken">_xpath(//ExecuteScript/clientSessionToken)</parm>
+                  <parm name="nodeVersionReference">_xpath(//ExecuteScript/nodeVersionReference)</parm>
+                  <parm name="action">_xpath(//ExecuteScript/action)</parm>
+                  <parm name="status">_xpath(//ExecuteScript/status)</parm>
+                  <parm name="message">_xpath(//ExecuteScript/message)</parm>
+                  <parm name="validationFileURL">_xpath(//ExecuteScript/validationFileURL)</parm>
+                  <return>success
+                     <agent key="7" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA_Adhoc21" active="false">com.ibi.agents.XDQAAgent
+                        <parm name="where">C:\temp\BeforeReturnDQResultRequestQA*.xml</parm>
+                        <parm name="when">always</parm>
+                        <parm name="b64">false</parm>
+                        <return>success
+                           <agent key="4" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_PopulateRequest" active="true">com.ibi.agents.XDConstantAgent
+                              <parm name="constant">_concat(&apos;&lt;ExecuteScript&gt;&lt;sessionToken&gt;&apos;,_sreg(sessionToken),&apos;&lt;/sessionToken&gt;&lt;clientSessionToken&gt;&apos;,_sreg(clientSessionToken),&apos;&lt;/clientSessionToken&gt;&lt;nodeVersionReference&gt;&apos;,_sreg(nodeVersionReference),&apos;&lt;/nodeVersionReference&gt;&lt;action&gt;&apos;,_sreg(action),&apos;&lt;/action&gt;&lt;status&gt;&apos;,_sreg(status),&apos;&lt;/status&gt;&lt;message&gt;&apos;,_sreg(message),&apos;&lt;/message&gt;&lt;validationFileURL&gt;&apos;,_sreg(validationFileURL),&apos;&lt;/validationFileURL&gt;&lt;/ExecuteScript&gt;&apos;)</parm>
+                              <parm name="format">flat</parm>
+                              <parm name="iserror">false</parm>
+                              <parm name="ifinput">always</parm>
+                              <parm name="wanteos">false</parm>
+                              <return>success
+                                 <agent key="3" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA_Adhoc2" active="false">com.ibi.agents.XDQAAgent
+                                    <parm name="where">C:\temp\ReturnDQResultRequestQA*.xml</parm>
+                                    <parm name="when">always</parm>
+                                    <parm name="physloc">C:\temp\postReturnDQResultRequestQA*.xml</parm>
+                                    <parm name="b64">false</parm>
+                                    <return>success
+                                       <agent key="8" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetHttpHeader" active="true">com.ibi.agents.XDSREGAgent
+                                          <parm name="regtype">hdr</parm>
+                                          <parm name="scope">server</parm>
+                                          <parm name="datatype">String</parm>
+                                          <parm name="lock">lck</parm>
+                                          <parm name="eval">false</parm>
+                                          <parm name="nolog">false</parm>
+                                          <parm name="nomarshall">false</parm>
+                                          <parm name="wanteos">false</parm>
+                                          <parm name="Accept">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</parm>
+                                          <parm name="Connection">keep-alive</parm>
+                                          <parm name="Content-Type">application/xml</parm>
+                                          <return>success
+                                             <agent key="5" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_ReturnDQResults_nhttpEmitAgent" active="true">com.ibi.agents.XDNHttpEmitAgent
+                                                <parm name="url">https://ebiquity-test.assessmint.com/service</parm>
+                                                <parm name="httpclientprov">HttpClient</parm>
+                                                <parm name="method">POST</parm>
+                                                <parm name="type">application/XML</parm>
+                                                <parm name="replytoreqhdrns">none</parm>
+                                                <parm name="replytoreqbphdrns">none</parm>
+                                                <parm name="replytoresphdrns">default</parm>
+                                                <parm name="replytocompression">none</parm>
+                                                <parm name="replytocompressrequest">none</parm>
+                                                <parm name="replaceconnection">true</parm>
+                                                <parm name="expectcontinue">false</parm>
+                                                <parm name="sendchunked">false</parm>
+                                                <parm name="maxreqsize">256KB</parm>
+                                                <parm name="maxrespsize">256KB</parm>
+                                                <parm name="wantpersist">false</parm>
+                                                <parm name="emittimeout">60</parm>
+                                                <parm name="preemptiveauth">default</parm>
+                                                <parm name="returnresponse">response</parm>
+                                                <parm name="nopreemit">true</parm>
+                                                <parm name="base64Response">false</parm>
+                                                <return>success
+                                                   <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+                                                </return>
+                                             </agent>
+                                          </return>
+                                       </agent>
+                                    </return>
+                                 </agent>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings>
+      <warning key="5" code="217" level="0" text="Service com.ibi.agents.XDNHttpEmitAgent in node node ReturnDQResults_nhttpEmitAgent (key 5): cannot be located for loading; check classpath">
+         <parm order="1">com.ibi.agents.XDNHttpEmitAgent</parm>
+         <parm order="2">ReturnDQResults_nhttpEmitAgent</parm>
+      </warning>
+   </warnings>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDSREGAgent"/>
+      <item type="agent" name="com.ibi.agents.XDQAAgent"/>
+      <item type="agent" name="com.ibi.agents.XDConstantAgent"/>
+      <item type="agent" name="com.ibi.agents.XDNHttpEmitAgent"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 7 relations</item>
+   </trace>
+</flow>

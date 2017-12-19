@@ -1,0 +1,37 @@
+Name=Iterator  Type=Agent  InEdge=Iteration  Iterator  From=DeleteFile  Nesting 1
+Registers
+             doclocation         [SYS]   config_en
+             engine              [SYS]   DQSConnector
+             iway.channel        [SYS]   ExecProcess
+             iway.channelname    [SYS]   ExecProcess
+             iway.config         [SYS]   DQSConnector
+             iway.inletname      [SYS]   
+             iway.lastnode       [SYS]   Iterator
+             iway.listener       [SYS]   ExecProcess
+             iway.pid            [SYS]   2580
+             iway.priornode      [SYS]   jump1
+             iway.serverfullhost [SYS]   AZU-P-OPX-017
+             iway.serverhost     [SYS]   AZU-P-OPX-017
+             iway.serverip       [SYS]   10.15.1.192
+             iway.startup.time   [SYS]   1511431688760
+             iway.workdir        [SYS]   C:/iWay/iway7/config/DQSConnector
+             iwayconfig          [SYS]   DQSConnector
+             iwaydata            [SYS]   C:/iWay/iway7/
+             iwayhome            [SYS]   C:/iWay/iway7/
+             iwayversion         [SYS]   7.0.7
+             iwayworkdir         [SYS]   C:/iWay/iway7/config/DQSConnector
+             jce.unlimited       [SYS]   false
+             locale              [SYS]   en_gb
+             name                [SYS]   ExecProcess
+             protocol            [SYS]   Lcl
+             currentime          [DOC]   1512476605826
+             iway.flowname       [DOC]   Copy_of_Ebiquity_Housekeeping_Pf
+             iway.threadname     [DOC]   W.ExecProcess.1~Copy_of_Ebiquity_Housek...[48]
+             lastmod             [DOC]   file
+             tid                 [DOC]   03cf7f4e-29ec-48a1-8bc6-bbfdfd69bfe5
+Content of document
+	Form=xml
+	<?xml version="1.0" encoding="UTF-8" ?>
+<dir base="C:\Projects" count="8">
+   <item type="file" lastmod="1512466324178" lastmodstr="5 Dec 2017 09:32:04 GMT">.OUTPUT_ebiquity_connect_dqs_integration_design_0086.csv.metaData</item>
+</dir>

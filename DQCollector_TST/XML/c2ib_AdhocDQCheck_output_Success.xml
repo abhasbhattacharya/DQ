@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+	<command>cmd /C c:\iway\dqs\runtime\bin\runcif.bat
+		-params.fileName=C:\Optix\Source\templatefileloc\Training_3.xlsx
+		-params.outfileName=C:\Optix\Source\Outs\OUTPUT_Training_3.xlsx
+		-runtimeConfig C:\iWay\dqs\workspace\DQSDEV\runtimeCfg.xml
+		&quot;C:\iWay\dqs\workspace\DQSDEV\Serial_demo_comp
+		V1.14.comp&quot;1&gt;C:\temp\error.txt 2&gt;&amp;1</command>
+	<exitcode>17</exitcode>
+	<errormsg />
+</status>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>Generate_DQPlanList_ResponseDoc_Trf</Name>
+  <Type>transform</Type>
+  <File>Generate_DQPlanList_ResponseDoc_Trf.gxp</File>
+  <Description></Description>
+  <GUID>EA0D718FABB883A09470A2AEB292D88E</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3253311731043128315432252993185)</Password>
+    <ImportDate>2017-12-13T11:41:06.751+01:00</ImportDate>
+  </ImportedFrom>
+  <Dependencies>
+    <Dependency>
+      <Name>c2ib_DQPlanList_input</Name>
+      <Type>schema</Type>
+      <GUID>AD586CFB454B3211EBDDA7DCCA1FF0BF</GUID>
+      <Path>/DQCollector_TST/Schemas/c2ib_DQPlanList_input.xsd/c2ib_DQPlanList_input.xsd</Path>
+      <UsageCount>2</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>c2ib_DQPlanList_output</Name>
+      <Type>schema</Type>
+      <GUID>3E50844478C3C3E5BF27014518118B8E</GUID>
+      <Path>/DQCollector_TST/Schemas/c2ib_DQPlanList_output.xsd/c2ib_DQPlanList_output.xsd</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

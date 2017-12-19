@@ -1,0 +1,58 @@
+Name=DeleteFile  Type=Agent  InEdge=true  From=Decision Test  Nesting 1
+Registers
+             doclocation         [SYS]   config_en
+             engine              [SYS]   DQSConnector
+             iway.channel        [SYS]   ExecProcess
+             iway.channelname    [SYS]   ExecProcess
+             iway.config         [SYS]   DQSConnector
+             iway.inletname      [SYS]   
+             iway.lastnode       [SYS]   DeleteFile
+             iway.listener       [SYS]   ExecProcess
+             iway.pid            [SYS]   2580
+             iway.priornode      [SYS]   Decision Test
+             iway.serverfullhost [SYS]   AZU-P-OPX-017
+             iway.serverhost     [SYS]   AZU-P-OPX-017
+             iway.serverip       [SYS]   10.15.1.192
+             iway.startup.time   [SYS]   1511431688760
+             iway.workdir        [SYS]   C:/iWay/iway7/config/DQSConnector
+             iwayconfig          [SYS]   DQSConnector
+             iwaydata            [SYS]   C:/iWay/iway7/
+             iwayhome            [SYS]   C:/iWay/iway7/
+             iwayversion         [SYS]   7.0.7
+             iwayworkdir         [SYS]   C:/iWay/iway7/config/DQSConnector
+             jce.unlimited       [SYS]   false
+             locale              [SYS]   en_gb
+             name                [SYS]   ExecProcess
+             protocol            [SYS]   Lcl
+             currentime          [DOC]   1512476973295
+             iway.flowname       [DOC]   Ebiquity_Housekeeping_Pf
+             iway.threadname     [DOC]   W.ExecProcess.1~Ebiquity_Housekeeping_Pf
+             lastmod             [DOC]   file
+             tid                 [DOC]   e6e69566-526f-497f-91e4-44b185cd1e2e
+Content of document
+	Form=xml
+	<?xml version="1.0" encoding="UTF-8" ?>
+<emitstatus status="0" source="agent_DeleteFile" ism="7.0.7">
+   <protocol>file</protocol>
+   <parms>
+      <parm name="action">input</parm>
+      <parm name="filePattern">none</parm>
+      <parm name="filefrom">C:\Projects\.OUTPUT_Test_Data_File_Pass_2.csv.metaData</parm>
+      <parm name="fileto"/>
+      <parm name="isdirectory">false</parm>
+      <parm name="mkdir">false</parm>
+      <parm name="operation">delete</parm>
+      <parm name="redoc">status</parm>
+      <parm name="retry">0</parm>
+      <parm name="size"/>
+   </parms>
+   <timestamp>2017-12-05T12:29:33.315Z</timestamp>
+   <status>0</status>
+   <msg>success
+      <sub_msg>File &apos;C:\Projects\.OUTPUT_Test_Data_File_Pass_2.csv.metaData&apos; deleted</sub_msg>
+   </msg>
+   <channel>ExecProcess</channel>
+   <nodename>agent_DeleteFile</nodename>
+   <filecount>1</filecount>
+   <name>C:\Projects\.OUTPUT_Test_Data_File_Pass_2.csv.metaData</name>
+</emitstatus>

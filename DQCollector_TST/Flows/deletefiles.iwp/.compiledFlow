@@ -1,0 +1,36 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.7">deletefiles
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="4" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DeleteFiles" active="true">com.ibi.agents.XDPFFileReadAgent
+                  <parm name="name">C:\\Projects\*.*</parm>
+                  <parm name="delete">true</parm>
+                  <parm name="format">flat</parm>
+                  <parm name="embed">false</parm>
+                  <parm name="base64Encode">false</parm>
+                  <parm name="retry">0</parm>
+                  <return>success
+                     <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDPFFileReadAgent"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 2 relations</item>
+   </trace>
+</flow>

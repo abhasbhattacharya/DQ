@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>DQSAnnotator_input</Name>
+  <Type>schema</Type>
+  <File>DQSAnnotator_input.xsd</File>
+  <Description></Description>
+  <GUID>1BDA5C242E2FCE92CFA8359BC9A32406</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3109313331043128317032252993201)</Password>
+    <ImportDate>2017-12-13T17:30:08.868+01:00</ImportDate>
+  </ImportedFrom>
+</iwresource:IWResource>

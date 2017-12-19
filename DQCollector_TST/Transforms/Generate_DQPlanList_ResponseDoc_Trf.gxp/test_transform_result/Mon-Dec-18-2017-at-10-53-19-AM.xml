@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<c2ib_GetDQPlanList>
+    <errorNumber>0</errorNumber>
+    <DQPlanList>
+        <DQPlan>
+            <planReference>DQSDEV\Serial_demo_comp
+		V1.4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-02T20:13:26</planLastModifiedTimestamp>
+            <planFolder>DQSDEV</planFolder>
+            <planName>Serial_demo_comp
+		V1.4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Serial_Transpose_Plan.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T18:54:11</planLastModifiedTimestamp>
+            <planFolder>DQSDEV</planFolder>
+            <planName>Serial_Transpose_Plan.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Training.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-30T10:00:57</planLastModifiedTimestamp>
+            <planFolder>DQSDEV</planFolder>
+            <planName>Training.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\UK_IMG_HSBC_2017.comp</planReference>
+            <planLastModifiedTimestamp>2017-12-06T08:55:50</planLastModifiedTimestamp>
+            <planFolder>DQSDEV</planFolder>
+            <planName>UK_IMG_HSBC_2017.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_Brand_V_1_4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-18T17:29:13</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_Brand_V_1_4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_Client_v_1_4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T18:57:49</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_Client_v_1_4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_Client_v_1_5.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-15T19:20:21</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_Client_v_1_5.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_End_date_V_1_4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T17:33:43</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_End_date_V_1_4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_Planned_cost_V_1_4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T17:51:29</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_Planned_cost_V_1_4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_Programatic_v_1_4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T17:51:03</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_Programatic_v_1_4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Component_folder\Validate_start_date_V_1_4.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T18:40:04</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Component_folder</planFolder>
+            <planName>Validate_start_date_V_1_4.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Germany\Serial_Transpose_Plan.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-20T18:54:11</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Germany</planFolder>
+            <planName>Serial_Transpose_Plan.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\Mexico\HSBC\UK_IMG_HSBC_2017.comp</planReference>
+            <planLastModifiedTimestamp>2017-12-06T08:55:50</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\Mexico\HSBC</planFolder>
+            <planName>UK_IMG_HSBC_2017.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\NL\Training.comp</planReference>
+            <planLastModifiedTimestamp>2017-11-30T10:00:57</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\NL</planFolder>
+            <planName>Training.comp</planName>
+            <planDescription />
+        </DQPlan>
+        <DQPlan>
+            <planReference>DQSDEV\UK\UK_IMG_HSBC_2017.comp</planReference>
+            <planLastModifiedTimestamp>2017-12-06T08:55:50</planLastModifiedTimestamp>
+            <planFolder>DQSDEV\UK</planFolder>
+            <planName>UK_IMG_HSBC_2017.comp</planName>
+            <planDescription />
+        </DQPlan>
+    </DQPlanList>
+</c2ib_GetDQPlanList>
+

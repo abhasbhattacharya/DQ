@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><IWAY xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.iwaysoftware.com/designer/model">
+  <SERVER NAME="iWay Registry">
+    <PROCESSFLOW DESCRIPTION="" IWAYVERSION="7.0.6" NAME="Copy_of_c2ib_GetDQPlanList_Pf" TIMEOUT="0">
+      <OBJECTS>
+        <OBJECT CLASS="start" DESCRIPTION="Start Object" ETAP="false" ID="start" KEY="1" NAME="Start" POS_LEFT="66" POS_TOP="115" TYPE="FLOWCHART_STARTUP_START">
+          <USER>
+            <PROPERTIES>
+              <GROUP NAME="General">
+                <PROPERTYITEM DISPLAY="No" ITEMTYPE="boolean" LABEL="Debug" NAME="Debug" REQUIRED="false" VALUE="true" VALUETYPE="boolean"/>
+              </GROUP>
+            </PROPERTIES>
+          </USER>
+          <RUNTIMEVARIABLES/>
+        </OBJECT>
+        <OBJECT CLASS="end" DESCRIPTION="End Object" ETAP="false" ID="end" KEY="2" NAME="End" POS_LEFT="574" POS_TOP="115" TYPE="FLOWCHART_STARTUP_END">
+          <USER>
+            <PROPERTIES>
+              <GROUP NAME="General"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDFileDirListAgent" DEACTIVATE="false" DESCRIPTION="Service Object" ETAP="false" ID="File Directory Contents" KEY="3" NAME="FileDirectoryList" POS_LEFT="195" POS_TOP="115" TYPE="FLOWCHART_AGENT" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="What directory should be listed. The directory must exist." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Directory" NAME="directory" REQUIRED="true" VALUE="_sreg(DQCollector.DQPlanFolder)" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="What items should be included in the listing." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Include" NAME="action" REQUIRED="false" VALUE="file" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Regular expression used to select files/directories, based on Pattern Type." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Selection Expression" NAME="regex" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If the Selection Expression is supplied, indicate whether it should be interpreted as a regular expression or a DOS-style wildcard." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Pattern Type" NAME="patterntype" REQUIRED="false" VALUE="regex" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="When using a streaming preparser in a channel, a last call is made AFTER the last document. Does this Service Exit want to be called?" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Call at EOS" NAME="wanteos" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDTransformAgent" DEACTIVATE="false" ETAP="false" ID="Generate_DQPlanList_ResponseDoc_Trf" KEY="4" NAME="Generate_DQPlanList_ResponseDoc_Trf" POS_LEFT="352" POS_TOP="115" TYPE="FLOWCHART_TRANSFORM" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="General">
+                <PROPERTYITEM DESCRIPTION="Type of transformation" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="" NAME="engine" REQUIRED="false" VALUE="iway" VALUETYPE=""/>
+                <PROPERTYITEM DESCRIPTION="Defined transform name to execute" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="" NAME="transform" REQUIRED="false" VALUE="Generate_DQPlanList_ResponseDoc_Trf" VALUETYPE=""/>
+              </GROUP>
+              <GROUP NAME="User Defined"/>
+              <GUIDS>
+                <PROPERTYITEM GUID="EA0D718FABB883A09470A2AEB292D88E" GUIDTYPE="transform" NAME="transform"/>
+              </GUIDS>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDQAAgent" DEACTIVATE="true" DESCRIPTION="Service Object" ETAP="false" ID="QA Agent" KEY="6" NAME="QA_Aftertrf" POS_LEFT="470" POS_TOP="115" TYPE="FLOWCHART_AGENT" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="File pattern to receive trace file" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Where" NAME="where" REQUIRED="true" VALUE="C:\temp\testQA*.xml" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="When to perform operation" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="When" NAME="when" REQUIRED="false" VALUE="always" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Identifier name to mark emitted trace document" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Name" NAME="name" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Location (file pattern} to which to emit actual input document. If omitted or empty, the incoming document is not emitted." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Emit input" NAME="physloc" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If set, the value is assumed to be in base64 notation. Only applicable is a specific write value is specified." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Base64 Decode" NAME="b64" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="If set, this is the starting offset within the data block to start the dump" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Starting Offset" NAME="startAt" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If set, this is the total number of bytes to dump. If not set dump is from &lt;i&gt;&lt;b&gt;Starting Offset&lt;/b&gt;&lt;/i&gt; to end of the buffer." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Maximum Length" NAME="maximum" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+      </OBJECTS>
+      <RELATIONS STARTINSTANCE="1">
+        <RELATION COMPLETION="OnCompletion" FROMINSTANCE="1" LINEDISPLAY="OnCompletion" LINEID="FLOWCHART_DEFAULT_LINE" TOINSTANCE="3"/>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="4" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="6">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="6" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="2">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="3" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="4">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+      </RELATIONS>
+      <TEXTLABELS>
+        <TEXTLABEL B="0" BGCOLORB="240" BGCOLORG="240" BGCOLORR="240" FONT="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" G="0" HEIGHT="97" ID="2" POS_MIDX="775" POS_MIDY="84" R="0" TEXT="17112017 - Initial Version - Retrieves .comp files from the planfolder location." WIDTH="381"/>
+      </TEXTLABELS>
+      <ROUTER TYPE="DesignerShortestPathRouter"/>
+    </PROCESSFLOW>
+  </SERVER>
+  <GLOBALVARIABLES/>
+</IWAY>

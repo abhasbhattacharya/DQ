@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>Ebiquity_Orchestration</Name>
+  <Type>process</Type>
+  <File>Ebiquity_Orchestration.iwp</File>
+  <Description></Description>
+  <GUID>7F9E403E0BFDE2993661003ED9B9FD36</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3125314931043128318632252993217)</Password>
+    <ImportDate>2017-11-20T08:52:24.350+01:00</ImportDate>
+  </ImportedFrom>
+  <Dependencies>
+    <Dependency>
+      <Name>c2ib_AdhocDQCheck_Pf</Name>
+      <Type>process</Type>
+      <GUID>F8E65AF0C0EAF81B74D1E59A8E56CFD1</GUID>
+      <Path>/DQCollector_TST/Flows/c2ib_AdhocDQCheck_Pf.iwp/c2ib_AdhocDQCheck_Pf.iwp</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>c2ib_GetDQPlanList_Pf</Name>
+      <Type>process</Type>
+      <GUID>C2296A7D019E905EB8EBEBABE1D118F9</GUID>
+      <Path>/DQCollector_TST/Flows/c2ib_GetDQPlanList_Pf.iwp/c2ib_GetDQPlanList_Pf.iwp</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

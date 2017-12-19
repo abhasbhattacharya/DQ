@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <publishHistory>
+        <publishInstance>
+            <serverURI>http://azu-p-opx-017.ebiquity.net:9000</serverURI>
+            <userId>iway</userId>
+            <password>ENCR(3205322931043128310632252993137)</password>
+            <KeystoreName/>
+            <TruststoreName/>
+            <Keystorelocation/>
+            <Keystorepassword/>
+            <Keystoretype/>
+            <Truststorelocation/>
+            <Truststorepassword/>
+            <Truststoretype/>
+            <publishType>registry</publishType>
+            <publishDate>2017-11-24 13:21:09.519 CET</publishDate>
+            <modificationStamp>3</modificationStamp>
+        </publishInstance>
+    </publishHistory>
+</info>

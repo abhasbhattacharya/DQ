@@ -1,0 +1,23 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.7">Test
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 1 relations</item>
+   </trace>
+</flow>

@@ -1,0 +1,66 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">c2ib_GetDQPlanList_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="3" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetPrimarySREGs" active="true">com.ibi.agents.XDSREGAgent
+                  <parm name="regtype">doc</parm>
+                  <parm name="scope">global</parm>
+                  <parm name="eval">false</parm>
+                  <parm name="nolog">false</parm>
+                  <parm name="nomarshall">false</parm>
+                  <parm name="wanteos">false</parm>
+                  <parm name="planfolder">C:\iWay\dqs\workspace\DQSDEV</parm>
+                  <parm name="param">cmd /c echo @path#@fdate @ftime</parm>
+                  <parm name="paramName">_qval(_sreg(param),double)</parm>
+                  <return>success
+                     <agent key="5" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_PLANCMD" active="true">com.ibi.agents.XDRunCmdAgent
+                        <parm name="cmd">_concat(&apos;cmd /C &apos;,&apos;forfiles /p &apos;,_sreg(DQCollector.planlocation),&apos; /s /M *.comp  /C &apos;,_sreg(paramName))</parm>
+                        <parm name="encoding">platform</parm>
+                        <parm name="cdata">false</parm>
+                        <parm name="inclq">false</parm>
+                        <parm name="timeout">0</parm>
+                        <parm name="detach">false</parm>
+                        <parm name="wanteos">false</parm>
+                        <return>success
+                           <agent key="4" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_c2ib_getPlans" active="true">com.ibi.agents.XDTransformAgent
+                              <parm name="engine">xslt</parm>
+                              <parm name="transform">c2ib_getPlans</parm>
+                              <return>success
+                                 <agent key="6" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Generate_DQPlanList_ResponseDoc_Trf" active="true">com.ibi.agents.XDTransformAgent
+                                    <parm name="engine">iway</parm>
+                                    <parm name="transform">Generate_DQPlanList_ResponseDoc_Trf</parm>
+                                    <return>success
+                                       <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+                                    </return>
+                                 </agent>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDSREGAgent"/>
+      <item type="agent" name="com.ibi.agents.XDRunCmdAgent"/>
+      <item type="agent" name="com.ibi.agents.XDTransformAgent"/>
+      <item type="transform" name="c2ib_getPlans" guid="BAFA8A57862DD0653522E08D16DC2270"/>
+      <item type="transform" name="Generate_DQPlanList_ResponseDoc_Trf" guid="EA0D718FABB883A09470A2AEB292D88E"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 5 relations</item>
+   </trace>
+</flow>

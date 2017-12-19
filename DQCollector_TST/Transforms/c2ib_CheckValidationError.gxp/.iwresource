@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>c2ib_CheckValidationError</Name>
+  <Type>transform</Type>
+  <File>c2ib_CheckValidationError.gxp</File>
+  <Description></Description>
+  <GUID>95AFABA3AC4065A52EC8203C70BD37F6</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3237310131043128313832252993169)</Password>
+    <ImportDate>2017-11-20T08:52:14.246+01:00</ImportDate>
+  </ImportedFrom>
+</iwresource:IWResource>

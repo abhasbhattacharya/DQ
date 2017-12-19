@@ -1,0 +1,50 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">Copy_of_c2ib_GetDQPlanList_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="3" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_FileDirectoryList" active="true">com.ibi.agents.XDFileDirListAgent
+                  <parm name="directory">_sreg(DQCollector.DQPlanFolder)</parm>
+                  <parm name="action">file</parm>
+                  <parm name="patterntype">regex</parm>
+                  <parm name="wanteos">false</parm>
+                  <return>success
+                     <agent key="4" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Generate_DQPlanList_ResponseDoc_Trf" active="true">com.ibi.agents.XDTransformAgent
+                        <parm name="engine">iway</parm>
+                        <parm name="transform">Generate_DQPlanList_ResponseDoc_Trf</parm>
+                        <return>success
+                           <agent key="6" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA_Aftertrf" active="false">com.ibi.agents.XDQAAgent
+                              <parm name="where">C:\temp\testQA*.xml</parm>
+                              <parm name="when">always</parm>
+                              <parm name="b64">false</parm>
+                              <return>success
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDFileDirListAgent"/>
+      <item type="agent" name="com.ibi.agents.XDTransformAgent"/>
+      <item type="agent" name="com.ibi.agents.XDQAAgent"/>
+      <item type="transform" name="Generate_DQPlanList_ResponseDoc_Trf" guid="EA0D718FABB883A09470A2AEB292D88E"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 4 relations</item>
+   </trace>
+</flow>

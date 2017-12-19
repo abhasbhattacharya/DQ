@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+    <Template>
+        <TransformTemplate>
+            <TemplateMetadata>
+                <ModifiedDate>Nov 1, 2017</ModifiedDate>
+            </TemplateMetadata>
+            <CustomerExtensions>
+                <ProcessingInstruction/>
+                <NamespaceDeclaration>
+                    <Namespace prefix="xsi"  id="1"  uri="http://www.w3.org/2001/XMLSchema-instance" />
+                    <Namespace prefix="xs"  id="2"  uri="http://www.w3.org/2001/XMLSchema" />
+                </NamespaceDeclaration>
+            </CustomerExtensions>
+            <Mapping>
+                <Input format="XML" >
+                    <Parameter name="Namespace"  value="false" />
+                    <Parameter name="Trim"  value="false" />
+                    <Parameter name="Validate"  value="false" />
+                </Input>
+                <Output format="XML" >
+                    <Parameter name="Namespace"  value="false" />
+                    <Parameter name="Indent"  value="4" />
+                    <Parameter name="NullTag"  value="true" />
+                    <Parameter name="encoding"  value="UTF-8" />
+                    <Parameter name="Declaration"  value="true" />
+                    <Parameter name="DtdDeclaration"  value="false" />
+                    <Parameter name="Footer"  value="" />
+                    <Parameter name="Header"  value="" />
+                </Output>
+                <MapStructure>
+                    <Table>
+                        <Rules>
+                            <MapRule  output="c2ib_AdhocDQCheck_output"  input="@PARENT()" />
+                                <MapRule  output="Status"  input="'Success'" />
+                                <MapRule  output="StatusCode"  input="'0'" />
+                                <MapRule  output="TemplateFileName"  input="@SREG('filename','TEMPLATE FILE NOT FOUND')" />
+                                <MapRule  output="callbackReference"  input="@SREG('callbackReference','CALLBACKREFERENCE NOT FOUND')" />
+                                <MapRule  output="planReference"  input="@SREG('planReference','PLAN NOT FOUND')" />
+                                <MapRule  output="StatusMessage"  input="'Template File retrieved from Connect &amp; submitted to DQS for processing.'" />
+                                <MapRule  output="sessionToken"  input="@SREG('DQCollector.sessionToken','SESSION TOKEN NOT FOUND')" />
+                                <MapRule  output="clientSessionToken"  input="@SREG('DQCollector.clientSessionToken','CLIENT SESSION TOKEN NOT FOUND')" />
+                            <MapRule output="c2ib_AdhocDQCheck_output" input="@ENDPARENT()"/>
+                        </Rules>
+                    </Table>
+                </MapStructure>
+            </Mapping>
+        </TransformTemplate>
+    </Template>
+    <Inputs>
+        <StructureFile schemaRoot="#c2ib_AdhocDQCheck"  display="../../Schemas/c2ib_AdhocDQCheck_input.xsd/c2ib_AdhocDQCheck_input.xsd"  guid="76D5C404D8F6933E92B506F7A5402F88"  type="xsd"  encoding="UTF-8" >../../schemas/76D5C404D8F6933E92B506F7A5402F88/c2ib_AdhocDQCheck_input.xsd</StructureFile>
+    </Inputs>
+    <Output>
+        <StructureFile schemaRoot="#c2ib_AdhocDQCheck_output"  display="../../Schemas/c2ib_AdhocDQCheck_output.xsd/c2ib_AdhocDQCheck_output.xsd"  guid="48E6C3F930F0D64DC9C86DD53D439FB8"  type="xsd"  encoding="UTF-8" >../../schemas/48E6C3F930F0D64DC9C86DD53D439FB8/c2ib_AdhocDQCheck_output.xsd</StructureFile>
+    </Output>
+</Project>

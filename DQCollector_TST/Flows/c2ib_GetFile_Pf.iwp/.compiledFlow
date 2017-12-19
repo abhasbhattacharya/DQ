@@ -1,0 +1,77 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">c2ib_GetFile_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="3" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Set SREG Agent" active="true">com.ibi.agents.XDSREGAgent
+                  <parm name="regtype">user</parm>
+                  <parm name="scope">local</parm>
+                  <parm name="datatype">String</parm>
+                  <parm name="eval">false</parm>
+                  <parm name="nolog">false</parm>
+                  <parm name="nomarshall">false</parm>
+                  <parm name="wanteos">false</parm>
+                  <parm name="file">XPATH(http/url/queryparms/queryparm[contains(@name,&apos;file&apos;)])</parm>
+                  <parm name="outputfilepath">_concat(_sreg(DQCollector.AnnotatedFileLocation),&apos;\\&apos;)</parm>
+                  <return>success
+                     <agent key="4" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Check if file exisits" active="true">com.ibi.agents.XDPFFileOpsAgent
+                        <parm name="operation">exist</parm>
+                        <parm name="filefrom">_concat(_sreg(outputfilepath),sreg(file))</parm>
+                        <parm name="filePattern">none</parm>
+                        <parm name="isdirectory">false</parm>
+                        <parm name="mkdir">false</parm>
+                        <parm name="redoc">result</parm>
+                        <parm name="action">input</parm>
+                        <parm name="retry">0</parm>
+                        <return>success
+                           <agent key="5" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Read File" active="true">com.ibi.agents.XDPFFileReadAgent
+                              <parm name="name">_concat(_sreg(outputfilepath),sreg(file))</parm>
+                              <parm name="delete">false</parm>
+                              <parm name="format">flat</parm>
+                              <parm name="embed">false</parm>
+                              <parm name="base64Encode">false</parm>
+                              <parm name="retry">0</parm>
+                              <return>success
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="2"/>
+                              </return>
+                           </agent>
+                        </return>
+                        <return>$error,$fail,fail_operation,notfound,fail_parse
+                           <agent key="6" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_File Doesn&apos;t Exists" active="true">com.ibi.agents.XDConstantAgent
+                              <parm name="constant">Error: Requested file not found!</parm>
+                              <parm name="format">flat</parm>
+                              <parm name="iserror">false</parm>
+                              <parm name="ifinput">always</parm>
+                              <parm name="wanteos">false</parm>
+                              <return>success
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="2"/>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDSREGAgent"/>
+      <item type="agent" name="com.ibi.agents.XDPFFileOpsAgent"/>
+      <item type="agent" name="com.ibi.agents.XDPFFileReadAgent"/>
+      <item type="agent" name="com.ibi.agents.XDConstantAgent"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 6 relations</item>
+   </trace>
+</flow>

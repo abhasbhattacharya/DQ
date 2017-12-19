@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IWAY xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.iwaysoftware.com/designer/model">
+  <SERVER NAME="iWay Registry">
+    <PROCESSFLOW DESCRIPTION="" IWAYVERSION="7.0.6" NAME="Copy_of_Ebiquity_Housekeeping_Pf" TIMEOUT="0">
+      <OBJECTS>
+        <OBJECT CLASS="start" DESCRIPTION="Start Object" ETAP="false" ID="start" KEY="1" NAME="Start" POS_LEFT="35" POS_TOP="81" TYPE="FLOWCHART_STARTUP_START">
+          <USER>
+            <PROPERTIES>
+              <GROUP NAME="General">
+                <PROPERTYITEM DISPLAY="No" ITEMTYPE="boolean" LABEL="Debug" NAME="Debug" REQUIRED="false" VALUE="true" VALUETYPE="boolean"/>
+              </GROUP>
+            </PROPERTIES>
+          </USER>
+          <RUNTIMEVARIABLES/>
+        </OBJECT>
+        <OBJECT CLASS="end" DESCRIPTION="End Object" ETAP="false" ID="end" KEY="2" NAME="End" POS_LEFT="897" POS_TOP="77" TYPE="FLOWCHART_STARTUP_END">
+          <USER>
+            <PROPERTIES>
+              <GROUP NAME="General"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDFileDirListAgent" DEACTIVATE="false" DESCRIPTION="Service Object" ETAP="false" ID="File Directory Contents" KEY="4" NAME="filedir" POS_LEFT="136" POS_TOP="81" TYPE="FLOWCHART_AGENT" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="What directory should be listed. The directory must exist." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Directory" NAME="directory" REQUIRED="true" VALUE="C:\\Projects" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="What items should be included in the listing." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Include" NAME="action" REQUIRED="false" VALUE="file" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Regular expression used to select files/directories, based on Pattern Type." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Selection Expression" NAME="regex" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If the Selection Expression is supplied, indicate whether it should be interpreted as a regular expression or a DOS-style wildcard." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Pattern Type" NAME="patterntype" REQUIRED="false" VALUE="regex" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="When using a streaming preparser in a channel, a last call is made AFTER the last document. Does this Service Exit want to be called?" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Call at EOS" NAME="wanteos" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDIterXMLSplit" DEACTIVATE="false" DESCRIPTION="Iterator Object" ETAP="false" KEY="6" NAME="Iterator" POS_LEFT="307" POS_TOP="81" TYPE="FLOWCHART_ITERATOR" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="Number of top-down levels to be snipped from generated documents" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Snip levels" NAME="skipNodes" REQUIRED="true" VALUE="0" VALUETYPE="integer"/>
+                <PROPERTYITEM DESCRIPTION="Describes the XPath location of the element on which to split. When &amp;quot;Evaluate Expression&amp;quot; is not set, enter an XPath expression directly. When &amp;quot;Evaluate Expression&amp;quot; is set, enter an expression that returns an XPath expression." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Expression" NAME="xpathExpr" REQUIRED="true" VALUE="XPATH(//dir/item[@type='file'])" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="When not set, the Expression parameter contains an XPath expression directly. When set, the Expression parameter is evaluated and the returned value is the XPath expression used for splitting." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Evaluate Expression" NAME="xpathIfl" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="If the XPath expression depends on namespaces, supply the name of an XML Namespace Map Provider that contains the required namespace prefixes and URLs." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="XML Namespace Map Provider" NAME="nsProv" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If set, the iterated portion is included with the remainder of the non-iterated portion of the document; otherwise only the parental path is included." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Cross Section" NAME="crosssection" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="In addition to content, a document carries state. How should the state be managed at the iterations?" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Iterating Document State" NAME="docstate" REQUIRED="true" VALUE="transient" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Determines whether an extra iteration is added at the end to emit the End Iteration document. If applicable, the end of iteration signal will be emitted on the end_iteration edge. The default is not to emit the End Iteration document. " DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="End Iteration Signal" NAME="enditer" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="'status' - status document will be the out document; 'original' - in document will become the out document; 'accumulations' allow gathering of partial documents but can be memory intensive. Input is what passes from the iterator, output is what is returned for each iteration." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Output document" NAME="return" REQUIRED="true" VALUE="status" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Determines which syntax level of XPath should be used. The default option selects the syntax level as set in the console global settings. " DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="XPath Syntax" NAME="xpathlevel" REQUIRED="false" VALUE="default" VALUETYPE="string"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDPFFileOpsAgent" DEACTIVATE="false" DESCRIPTION="File Object" ETAP="false" KEY="5" NAME="DeleteFile" POS_LEFT="594" POS_TOP="77" TYPE="FLOWCHART_STARTUP_FILE" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="Command to execute when agent goes active" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Operation" NAME="operation" REQUIRED="true" VALUE="delete" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Originating file to be operated on.  Relative or absolute file paths are supported explicitly or through a SREG or XPath expression evaluated using the incoming document" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="File (from)" NAME="filefrom" REQUIRED="true" VALUE="_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item))" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Select from pattern to use when searching for files. &lt;/br>&lt;b>none&lt;/b> - File (from) is literal name. &lt;/br>&lt;b>dos&lt;/b> - File (from) contains only DOS like pattern (*, ?) syntax. &lt;/br>&lt;b>regex&lt;/b> - File (from) contains full Java Regular Expression syntax." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="File (from) Pattern" NAME="filePattern" REQUIRED="true" VALUE="none" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Destination file to be operated on.  Wild cards accepted.   Required except for delete, size, exists" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="File (to)" NAME="fileto" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="File (to) references a directory, if it is unclear whether path names a directory or a filename, the Service Manager will assume the path names a file." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="File (to) a directory name" NAME="isdirectory" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="Create if directory doesn't exist. Used only for Copy, Move, Rename and Append operations." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="File (to) Create Directories" NAME="mkdir" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="Special register designated to hold size.  Required for size operation." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Size" NAME="size" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Document returned by operation (bad input defaults to result)" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Out Document" NAME="redoc" REQUIRED="true" VALUE="status" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Whether input document or status document returned on failure" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Action on Failure" NAME="action" REQUIRED="true" VALUE="input" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="If non-zero, will retry the operation n times at one-second intervals" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Retry" NAME="retry" REQUIRED="false" VALUE="0" VALUETYPE="integer"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDSREGAgent" DEACTIVATE="false" DESCRIPTION="Service Object" ETAP="false" KEY="7" NAME="SetPrimarySREGs" POS_LEFT="216" POS_TOP="81" TYPE="FLOWCHART_AGENT" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="Type of variable (headers appear in emitted documents as header values). Use type del to delete the register." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Type of variable" NAME="regtype" REQUIRED="false" VALUE="doc" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Determines at what level the variable is defined and therefore controls its life span and visibility." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Scope of variable" NAME="scope" REQUIRED="false" VALUE="global" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Name of a serialization lock for this set of register operations" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Lock Name" NAME="lock" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Causes contents to hold functions that are evaluated on access" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Automatic evaluation" NAME="eval" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="If set, this register will not be logged in an activity log (some drivers may not respect this setting)." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="No Activity Log" NAME="nolog" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="If set, this register will not be marshalled for transfer via e.g. gateway, pending storage or AFTI." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="No Marshal" NAME="nomarshall" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="When using a streaming preparser in a channel, a last call is made AFTER the last document. Does this Service Exit want to be called?" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Call at EOS" NAME="wanteos" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+              </GROUP>
+              <GROUP NAME="User Defined">
+                <PROPERTYITEM DESCRIPTION="Current time in ms" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" NAME="currentime" REQUIRED="false" VALUE="_timer()" VALUETYPE="string"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDSREGAgent" DEACTIVATE="false" DESCRIPTION="Service Object" ETAP="false" KEY="8" NAME="SetPrimarySREGs1" POS_LEFT="398" POS_TOP="81" TYPE="FLOWCHART_AGENT" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="Main">
+                <PROPERTYITEM DESCRIPTION="Type of variable (headers appear in emitted documents as header values). Use type del to delete the register." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Type of variable" NAME="regtype" REQUIRED="false" VALUE="doc" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Determines at what level the variable is defined and therefore controls its life span and visibility." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combolist" LABEL="Scope of variable" NAME="scope" REQUIRED="false" VALUE="global" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Name of a serialization lock for this set of register operations" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" LABEL="Lock Name" NAME="lock" REQUIRED="false" VALUE="" VALUETYPE="string"/>
+                <PROPERTYITEM DESCRIPTION="Causes contents to hold functions that are evaluated on access" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Automatic evaluation" NAME="eval" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="If set, this register will not be logged in an activity log (some drivers may not respect this setting)." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="No Activity Log" NAME="nolog" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="If set, this register will not be marshalled for transfer via e.g. gateway, pending storage or AFTI." DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="No Marshal" NAME="nomarshall" REQUIRED="true" VALUE="false" VALUETYPE="boolean"/>
+                <PROPERTYITEM DESCRIPTION="When using a streaming preparser in a channel, a last call is made AFTER the last document. Does this Service Exit want to be called?" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="boolean" LABEL="Call at EOS" NAME="wanteos" REQUIRED="false" VALUE="false" VALUETYPE="boolean"/>
+              </GROUP>
+              <GROUP NAME="User Defined">
+                <PROPERTYITEM DESCRIPTION="" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="combobox" NAME="lastmod" REQUIRED="false" VALUE="XPATH(//dir/item/@type)" VALUETYPE="string"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="decision" CLASSNAME="" DEACTIVATE="false" DESCRIPTION="Decision Test Object" ETAP="false" KEY="9" NAME="Decision Test" POS_LEFT="492" POS_TOP="77" TYPE="FLOWCHART_STARTUP_DECISIONTEST" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="General">
+                <PROPERTYITEM DISPLAY="No" HIDDEN="false" ITEMTYPE="combolist" NAME="fctn" REQUIRED="false" VALUE="cond" VALUETYPE="string"/>
+                <PROPERTYITEM DISPLAY="No" HIDDEN="false" ITEMTYPE="combolist" NAME="type" REQUIRED="false" VALUE="test" VALUETYPE="string"/>
+                <PROPERTYITEM DISPLAY="No" HIDDEN="false" ITEMTYPE="combobox" NAME="parm1" REQUIRED="false" VALUE="_sreg(currentime) -_sreg(lastmod)" VALUETYPE="string"/>
+                <PROPERTYITEM DISPLAY="No" HIDDEN="false" ITEMTYPE="combobox" NAME="parm2" REQUIRED="false" VALUE="72000" VALUETYPE="string"/>
+                <PROPERTYITEM DISPLAY="No" HIDDEN="false" ITEMTYPE="combolist" NAME="op" REQUIRED="false" VALUE="ge" VALUETYPE="string"/>
+              </GROUP>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="junction" CLASSNAME="" DEACTIVATE="false" DESCRIPTION="Junction Object" ETAP="false" KEY="10" NAME="Junction" POS_LEFT="675" POS_TOP="77" TYPE="FLOWCHART_STARTUP_JUNCTION" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GUIDS/>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+        <OBJECT CLASS="agent" CLASSNAME="com.ibi.agents.XDPFlowAgent" DEACTIVATE="false" ETAP="false" ID="Ebiquity_Housekeeping__Datafiles_Pf" KEY="3" NAME="Ebiquity_Housekeeping__Datafiles_Pf" POS_LEFT="786" POS_TOP="77" TYPE="FLOWCHART_PFLOW" UDOUID="" XDEBUG="std" XDEBUGHIGH="10" XDEBUGLOW="1">
+          <USER>
+            <CUSTOMEVENT>
+              <VALUELIST/>
+            </CUSTOMEVENT>
+            <PROPERTIES>
+              <GROUP NAME="General">
+                <PROPERTYITEM DESCRIPTION="" DISPLAY="Yes" HIDDEN="false" ITEMTYPE="" NAME="pflowName" REQUIRED="false" VALUE="Ebiquity_Housekeeping__Datafiles_Pf" VALUETYPE=""/>
+              </GROUP>
+              <GROUP NAME="User Defined"/>
+              <GUIDS>
+                <PROPERTYITEM GUID="860C09B09E12A0C26710FBFC949DA741" GUIDTYPE="process" NAME=""/>
+              </GUIDS>
+              <REGISTERS NAME="Pre-Execution"/>
+              <REGISTERS NAME="Post-Execution"/>
+            </PROPERTIES>
+          </USER>
+        </OBJECT>
+      </OBJECTS>
+      <RELATIONS STARTINSTANCE="1">
+        <RELATION COMPLETION="OnCompletion" FROMINSTANCE="1" LINEDISPLAY="OnCompletion" LINEID="FLOWCHART_DEFAULT_LINE" TOINSTANCE="4">
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="4" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="7">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="7" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="6">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="6" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="8">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="8" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="9">
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnCustom" EVENT="true" FROMINSTANCE="9" LINEDESCRIPTION="" LINEDISPLAY="OnCustom" LINEID="FLOWCHART_CUSTOM_LINE" TOINSTANCE="5">
+          <CUSTOMEVENTS>
+            <EVENT CHECK="false" DESCRIPTION="Error" TYPE="Stock" VALUE="OnError"/>
+            <EVENT CHECK="false" DESCRIPTION="Success" TYPE="Stock" VALUE="OnSuccess"/>
+            <EVENT CHECK="false" DESCRIPTION="Used for a Decision of type Switch" TYPE="Stock" VALUE="OnDefault"/>
+            <EVENT CHECK="true" DESCRIPTION="" TYPE="Custom" VALUE="true"/>
+            <EVENT CHECK="false" DESCRIPTION="" TYPE="Custom" VALUE="false"/>
+          </CUSTOMEVENTS>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="Loop" EVENT="Loop" FROMINSTANCE="10" LINEDISPLAY="Loop" LINEID="FLOWCHART_LOOPOBJECT_LINE" TOINSTANCE="6">
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="5" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="10">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnCustom" EVENT="false" FROMINSTANCE="9" LINEDESCRIPTION="" LINEDISPLAY="OnCustom" LINEID="FLOWCHART_CUSTOM_LINE" TOINSTANCE="10">
+          <CUSTOMEVENTS>
+            <EVENT CHECK="false" DESCRIPTION="Error" TYPE="Stock" VALUE="OnError"/>
+            <EVENT CHECK="false" DESCRIPTION="Success" TYPE="Stock" VALUE="OnSuccess"/>
+            <EVENT CHECK="false" DESCRIPTION="Used for a Decision of type Switch" TYPE="Stock" VALUE="OnDefault"/>
+            <EVENT CHECK="false" DESCRIPTION="" TYPE="Custom" VALUE="true"/>
+            <EVENT CHECK="true" DESCRIPTION="" TYPE="Custom" VALUE="false"/>
+          </CUSTOMEVENTS>
+          <RELATIONLABEL LABEL=""/>
+          <BENDPOINTS>
+            <BENDPOINT>
+              <DIMENSION X="-33" Y="89"/>
+              <DIMENSION X="-200" Y="88"/>
+            </BENDPOINT>
+            <BENDPOINT>
+              <DIMENSION X="74" Y="89"/>
+              <DIMENSION X="-93" Y="88"/>
+            </BENDPOINT>
+            <BENDPOINT>
+              <DIMENSION X="192" Y="91"/>
+              <DIMENSION X="25" Y="90"/>
+            </BENDPOINT>
+          </BENDPOINTS>
+        </RELATION>
+        <RELATION COMPLETION="OnCompletion" EVENT="" FROMINSTANCE="10" LINEDESCRIPTION="" LINEDISPLAY="OnCompletion" LINEID="FLOWCHART_DEFAULT_LINE" TOINSTANCE="3">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+        <RELATION COMPLETION="OnSuccess" EVENT="" FROMINSTANCE="3" LINEDESCRIPTION="" LINEDISPLAY="OnSuccess" LINEID="FLOWCHART_SUCCESS_LINE" TOINSTANCE="2">
+          <CUSTOMEVENTS/>
+          <RELATIONLABEL LABEL=""/>
+        </RELATION>
+      </RELATIONS>
+      <TEXTLABELS/>
+      <ROUTER TYPE="DesignerShortestPathRouter"/>
+    </PROCESSFLOW>
+  </SERVER>
+  <GLOBALVARIABLES/>
+</IWAY>

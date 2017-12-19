@@ -1,0 +1,117 @@
+system name is: DQSConnector
+Iwayhome is C:/iWay/iway7/
+Iwaydata is C:/iWay/iway7/
+'C:\iWay\iway7\config\config.xml' has not change since the last backup.
+The Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files are not installed
+Generic XPath iFL functions use full XPath 1.0 syntax
+XPath 1.0 iFL functions use iWay's full syntax implementation
+Encoding from iflows context is: UTF-8
+Encoding from ib2c_DQResponseHandling_Ch context is: Cp1252
+Encoding from DQProcessing_Ch context is: Cp1252
+Encoding from ExecProcess context is: UTF-8
+start recognized at 1
+Request to compile _COND(_sreg(currentime) -_sreg(lastmod),ge,72000)
+test recognized at 9 test: _COND(_sreg(currentime) -_sreg(lastmod),ge,72000)
+end recognized for 'End' at 2
+junction source recognized at node Junction (key 10) link to target junction_Junction
+There are 11 relations
+No flow timeout specified, so default of 10 seconds has been set for this test. To change, set a specific flow timeout property.
+setting flow variable xtrack=full
+setting flow variable Debug=true
+setting flow variable timeout=0
+setting flow variable debug=null
+setting flow variable null=text
+node Start returned edges: success
+node filedir returned edges: success
+node SetPrimarySREGs returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_ebiquity_connect_dqs_integration_design_008.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_ebiquity_connect_dqs_integration_design_0086.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_Test_Data_File_Fail_with_Criticals.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_Test_Data_File_Fail_with_Criticals3.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_Test_Data_File_Fail_with_Criticals33.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_Test_Data_File_Fail_with_Criticals_and_Warnings_2.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_Test_Data_File_Pass.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: success
+node SetPrimarySREGs1 returned edges: success
+evaluating '_COND(_sreg(currentime) -_sreg(lastmod),ge,72000)'
+node Decision Test returned edges: true
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=_concat(XPATH(//dir/@base),'\\',XPATH(//dir/item)), isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=C:\Projects\.OUTPUT_Test_Data_File_Pass3.csv.metaData, isdirectory=false, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node DeleteFile returned edges: success
+node Junction returned edges: success
+node jump1 returned edges: success
+node Iterator returned edges: $eos
+Exception when loading pflow Ebiquity_Housekeeping__Datafiles_Pf: XD[FAIL] cause: 0 subcause: 0 message: Cannot find pflow Ebiquity_Housekeeping__Datafiles_Pf, maybe you need to restart the server?
+node Ebiquity_Housekeeping__Datafiles_Pf returned edges: fail_notfound
+Ebiquity_Housekeeping__Datafiles_Pf has no wired edges to follow; node Ebiquity_Housekeeping__Datafiles_Pf returned edges: fail_notfound
+Entering error processing from node  agent_Ebiquity_Housekeeping__Datafiles_Pf with edge $error
+wakeUp called for pflow: W.ExecProcess.1~Copy_of_Ebiquity_Housekeeping_Pf
+Error processing failed, flow line ending at <agent_Ebiquity_Housekeeping__Datafiles_Pf:Ebiquity_Housekeeping__Datafiles_Pf/type(PFlow)>
+Pflow thread stopping at Ebiquity_Housekeeping__Datafiles_Pf
+Ending pflow, number of subthreads still running=0
+back from pflow, [Ebiquity_Housekeeping__Datafiles_Pf] FAIL: Process flow failed, exception message: Ebiquity_Housekeeping__Datafiles_Pf has no wired edges to follow; node Ebiquity_Housekeeping__Datafiles_Pf returned edges: fail_notfound
+commit is set to FALSE or pflow set to roll back
+Issuing local transaction rollback
+Tearing down XDManager
+shutting down system scheduler
+system scheduler stopped
+enter stopall fromChild=false state=inactive
+already stopped[2]...; state=inactive
+console master stopped
+providers terminated

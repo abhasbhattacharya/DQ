@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>WorkspaceFolder_Trf</Name>
+  <Type>transform</Type>
+  <File>WorkspaceFolder_Trf.gxp</File>
+  <Description></Description>
+  <GUID>D42EBCB8FB3ADF106697DBB01F55667C</GUID>
+  <targetServer>7.0.7</targetServer>
+  <Dependencies>
+    <Dependency>
+      <Name>c2ib_WorkspaceLoc_input</Name>
+      <Type>schema</Type>
+      <GUID>72587A8B1B0F7D38F68DABF3612D3E4F</GUID>
+      <Path>/DQCollector/Schemas/c2ib_WorkspaceLoc_input.xsd/c2ib_WorkspaceLoc_input.xsd</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

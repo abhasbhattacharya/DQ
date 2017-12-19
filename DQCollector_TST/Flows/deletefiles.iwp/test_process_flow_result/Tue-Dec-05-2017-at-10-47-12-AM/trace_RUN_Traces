@@ -1,0 +1,40 @@
+system name is: DQSConnector
+Iwayhome is C:/iWay/iway7/
+Iwaydata is C:/iWay/iway7/
+'C:\iWay\iway7\config\config.xml' has not change since the last backup.
+The Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files are not installed
+Generic XPath iFL functions use full XPath 1.0 syntax
+XPath 1.0 iFL functions use iWay's full syntax implementation
+Encoding from iflows context is: UTF-8
+Encoding from ib2c_DQResponseHandling_Ch context is: Cp1252
+Encoding from DQProcessing_Ch context is: Cp1252
+Encoding from ExecProcess context is: UTF-8
+start recognized at 1
+end recognized for 'End' at 2
+There are 2 relations
+No flow timeout specified, so default of 10 seconds has been set for this test. To change, set a specific flow timeout property.
+setting flow variable xtrack=full
+setting flow variable Debug=true
+setting flow variable timeout=0
+setting flow variable debug=null
+setting flow variable null=text
+node Start returned edges: success
+XDPFFileOpsAgent.execute(before evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=\\GBR-C-NFS-001D\DQSAnnotator\DataFiles, isdirectory=true, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+XDPFFileOpsAgent.execute(after evaluateWithException): tMap{redoc=status, filePattern=none, size=null, filefrom=\\GBR-C-NFS-001D\DQSAnnotator\DataFiles, isdirectory=true, action=input, operation=delete, mkdir=false, retry=0, fileto=null}
+node deletefiles returned edges: fail_operation
+deletefiles has no wired edges to follow; node deletefiles returned edges: fail_operation
+Entering error processing from node  agent_deletefiles with edge $error
+wakeUp called for pflow: W.ExecProcess.1~deletefiles
+Error processing failed, flow line ending at <agent_deletefiles:deletefiles/type(Agent)>
+Pflow thread stopping at deletefiles
+Ending pflow, number of subthreads still running=0
+back from pflow, [deletefiles] FAIL: Process flow failed, exception message: deletefiles has no wired edges to follow; node deletefiles returned edges: fail_operation
+commit is set to FALSE or pflow set to roll back
+Issuing local transaction rollback
+Tearing down XDManager
+shutting down system scheduler
+system scheduler stopped
+enter stopall fromChild=false state=inactive
+already stopped[2]...; state=inactive
+console master stopped
+providers terminated

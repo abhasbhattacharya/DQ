@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>c2ib_GetFile_Pf</Name>
+  <Type>process</Type>
+  <File>c2ib_GetFile_Pf.iwp</File>
+  <Description></Description>
+  <GUID>D1284E4535E85648EAFEEB382845CCB6</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3173318131043128320232252993217)</Password>
+    <ImportDate>2017-11-21T13:35:08.432+01:00</ImportDate>
+  </ImportedFrom>
+</iwresource:IWResource>

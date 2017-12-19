@@ -1,0 +1,31 @@
+Name=DeleteFiles  Type=Agent  InEdge=OnCompletion  From=Start  Not nested
+Registers
+             doclocation         [SYS]   config_en
+             engine              [SYS]   DQSConnector
+             iway.channel        [SYS]   ExecProcess
+             iway.channelname    [SYS]   ExecProcess
+             iway.config         [SYS]   DQSConnector
+             iway.inletname      [SYS]   
+             iway.lastnode       [SYS]   DeleteFiles
+             iway.listener       [SYS]   ExecProcess
+             iway.pid            [SYS]   2580
+             iway.priornode      [SYS]   Start
+             iway.serverfullhost [SYS]   AZU-P-OPX-017
+             iway.serverhost     [SYS]   AZU-P-OPX-017
+             iway.serverip       [SYS]   10.15.1.192
+             iway.startup.time   [SYS]   1511431688760
+             iway.workdir        [SYS]   C:/iWay/iway7/config/DQSConnector
+             iwayconfig          [SYS]   DQSConnector
+             iwaydata            [SYS]   C:/iWay/iway7/
+             iwayhome            [SYS]   C:/iWay/iway7/
+             iwayversion         [SYS]   7.0.7
+             iwayworkdir         [SYS]   C:/iWay/iway7/config/DQSConnector
+             jce.unlimited       [SYS]   false
+             locale              [SYS]   en_gb
+             name                [SYS]   ExecProcess
+             protocol            [SYS]   Lcl
+             iway.flowname       [DOC]   deletefiles
+             iway.threadname     [DOC]   W.ExecProcess.1~deletefiles
+             tid                 [DOC]   53848633-02d6-4a24-a520-933ae0babc83
+Content of document
+	Null content

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappingbuilder:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mappingbuilder="http://iwtrans.iwaysoftware.com/mappingbuilder">
+  <map>
+    <function index="0" label="@TRIM(@FLIP(@STRTOKEN(@FLIP(Plans/Plan),'1','\')))" name="" type="4"/>
+  </map>
+</mappingbuilder:DocumentRoot>

@@ -1,0 +1,81 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">Ebiquity_Orchestration
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="6" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA" active="false">com.ibi.agents.XDQAAgent
+                  <parm name="where">C:\temp\testQA.xml</parm>
+                  <parm name="when">always</parm>
+                  <parm name="b64">false</parm>
+                  <return>success
+                     <decision key="3" flowcharttype="FLOWCHART_STARTUP_DECISIONSWITCH" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="decision_HTTP Url?" active="true" type="switch">_sreg(action)
+                        <parm name="type">switch</parm>
+                        <parm name="parm1">_sreg(action)</parm>
+                        <parm name="fctn">cond</parm>
+                        <return>$other
+                           <agent key="7" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_NoAction" active="true">com.ibi.agents.XDConstantAgent
+                              <parm name="constant">&lt;Response&gt;Can&apos;t Recognize the URL&lt;/Response&gt;</parm>
+                              <parm name="format">xml</parm>
+                              <parm name="iserror">false</parm>
+                              <parm name="ifinput">always</parm>
+                              <parm name="wanteos">false</parm>
+                              <return>success
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="3">
+                                    <parm name="terminate">false</parm>
+                                 </end>
+                              </return>
+                           </agent>
+                        </return>
+                        <return>c2ib_AdhocDQCheck
+                           <agent key="4" flowcharttype="FLOWCHART_PFLOW" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_c2ib_AdhocDQCheck_Pf" active="true">com.ibi.agents.XDPFlowAgent
+                              <parm name="pflowName">c2ib_AdhocDQCheck_Pf</parm>
+                              <return>success
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="3">
+                                    <parm name="terminate">false</parm>
+                                 </end>
+                              </return>
+                           </agent>
+                        </return>
+                        <return>c2ib_GetDQPlanList
+                           <agent key="5" flowcharttype="FLOWCHART_PFLOW" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_c2ib_GetDQPlanList_Pf" active="true">com.ibi.agents.XDPFlowAgent
+                              <parm name="pflowName">c2ib_GetDQPlanList_Pf</parm>
+                              <return>success
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="3">
+                                    <parm name="terminate">false</parm>
+                                 </end>
+                              </return>
+                           </agent>
+                        </return>
+                     </decision>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDQAAgent"/>
+      <item type="agent" name="com.ibi.agents.XDConstantAgent"/>
+      <item type="agent" name="com.ibi.agents.XDPFlowAgent"/>
+      <item type="process" name="c2ib_AdhocDQCheck_Pf" guid="F8E65AF0C0EAF81B74D1E59A8E56CFD1"/>
+      <item type="process" name="c2ib_GetDQPlanList_Pf" guid="C2296A7D019E905EB8EBEBABE1D118F9"/>
+      <item type="sreg" name="action"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>Request to compile _sreg(action)</item>
+      <item>Sreg action in node 3 found in expression _sreg(action)</item>
+      <item>switch recognized at 3 switch: _sreg(action)</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 8 relations</item>
+   </trace>
+</flow>

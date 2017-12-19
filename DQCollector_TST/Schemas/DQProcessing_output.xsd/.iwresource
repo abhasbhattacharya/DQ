@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>DQProcessing_output</Name>
+  <Type>schema</Type>
+  <File>DQProcessing_output.xsd</File>
+  <Description></Description>
+  <GUID>2FE68F851C235CDEBCC340CFBE82ABDF</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3125313331043128315432252993169)</Password>
+    <ImportDate>2017-12-13T17:30:15.251+01:00</ImportDate>
+  </ImportedFrom>
+</iwresource:IWResource>

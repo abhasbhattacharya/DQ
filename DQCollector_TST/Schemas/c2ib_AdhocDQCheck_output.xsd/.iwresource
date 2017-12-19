@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>c2ib_AdhocDQCheck_output</Name>
+  <Type>schema</Type>
+  <File>c2ib_AdhocDQCheck_output.xsd</File>
+  <Description></Description>
+  <GUID>48E6C3F930F0D64DC9C86DD53D439FB8</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3141316531043128320232252993233)</Password>
+    <ImportDate>2017-12-13T17:30:03.358+01:00</ImportDate>
+  </ImportedFrom>
+</iwresource:IWResource>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>c2ib_AdhocDQCheck_Pf</Name>
+  <Type>process</Type>
+  <File>c2ib_AdhocDQCheck_Pf.iwp</File>
+  <Description></Description>
+  <GUID>F8E65AF0C0EAF81B74D1E59A8E56CFD1</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3125314931043128318632252993217)</Password>
+    <ImportDate>2017-11-20T13:08:27.908+01:00</ImportDate>
+  </ImportedFrom>
+  <Dependencies>
+    <Dependency>
+      <Name>c2ib_AdhocDQCheck_input</Name>
+      <Type>schema</Type>
+      <GUID>76D5C404D8F6933E92B506F7A5402F88</GUID>
+      <Path>/DQCollector_TST/Schemas/c2ib_AdhocDQCheck_input.xsd/c2ib_AdhocDQCheck_input.xsd</Path>
+      <UsageCount>3</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>c2ib_AdhocDQCheck_Response</Name>
+      <Type>schema</Type>
+      <GUID>4132DB3149E99831037B813436B43536</GUID>
+      <Path>/DQCollector_TST/Schemas/c2ib_AdhocDQCheck_Response.xsd/c2ib_AdhocDQCheck_Response.xsd</Path>
+      <UsageCount>3</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>Generate_AdhocDQProcessing_ResponseDoc_Trf</Name>
+      <Type>transform</Type>
+      <GUID>86BDA2CE3DC320EBD7180A3BF11EA9C6</GUID>
+      <Path>/DQCollector_TST/Transforms/Generate_AdhocDQProcessing_ResponseDoc_Trf.gxp/Generate_AdhocDQProcessing_ResponseDoc_Trf.gxp</Path>
+      <UsageCount>3</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>Generate_AdhocDQCheck_ResponseDoc_Trf</Name>
+      <Type>transform</Type>
+      <GUID>E7B4022D82EFEBAAADFC10B8F1BEE25C</GUID>
+      <Path>/DQCollector_TST/Transforms/Generate_AdhocDQCheck_ResponseDoc_Trf.gxp/Generate_AdhocDQCheck_ResponseDoc_Trf.gxp</Path>
+      <UsageCount>3</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

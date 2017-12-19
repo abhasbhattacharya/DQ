@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<c2ib_AdhocDQCheck>
+	<callbackReference>Plans/SamplePlan.plan</callbackReference>
+	<planReference>Plans/SamplePlan.plan</planReference>
+	<responseURL>http://www.sample-videos.com/xls/Sample-Spreadsheet-10-rows.xls</responseURL>
+</c2ib_AdhocDQCheck>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>Generate_ReturnDQProcessing_Input_Trf</Name>
+  <Type>transform</Type>
+  <File>Generate_ReturnDQProcessing_Input_Trf.gxp</File>
+  <Description></Description>
+  <GUID>4C1A6F3F7CEC4F89A87D383B4C99B7C9</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3205322931043128310632252993137)</Password>
+    <ImportDate>2017-12-13T17:30:11.788+01:00</ImportDate>
+  </ImportedFrom>
+  <Dependencies>
+    <Dependency>
+      <Name>ib2c_DQResponseHandling_input</Name>
+      <Type>schema</Type>
+      <GUID>4725C823242B8A060833F6F374BE3A44</GUID>
+      <Path>/DQCollector_TST/Schemas/ib2c_DQResponseHandling_input.xsd/ib2c_DQResponseHandling_input.xsd</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+    <Dependency>
+      <Name>DQProcessing_output</Name>
+      <Type>schema</Type>
+      <GUID>2FE68F851C235CDEBCC340CFBE82ABDF</GUID>
+      <Path>/DQCollector_TST/Schemas/DQProcessing_output.xsd/DQProcessing_output.xsd</Path>
+      <UsageCount>1</UsageCount>
+    </Dependency>
+  </Dependencies>
+</iwresource:IWResource>

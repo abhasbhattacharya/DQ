@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>ib2c_ReturnDQResult_Pf</Name>
+  <Type>process</Type>
+  <File>ib2c_ReturnDQResult_Pf.iwp</File>
+  <Description></Description>
+  <GUID>0BFFBC24434C691888F6C2DA886CA752</GUID>
+  <targetServer>7.0.7</targetServer>
+  <ImportedFrom>
+    <ServerURI>http://azu-p-opx-017.ebiquity.net:9000</ServerURI>
+    <UserId>iway</UserId>
+    <Password>ENCR(3125314931043128318632252993217)</Password>
+    <ImportDate>2017-11-20T08:52:43.637+01:00</ImportDate>
+  </ImportedFrom>
+</iwresource:IWResource>

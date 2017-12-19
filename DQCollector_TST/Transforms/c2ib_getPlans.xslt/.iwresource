@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>c2ib_getPlans</Name>
+  <Type>transform</Type>
+  <File>c2ib_getPlans.xslt</File>
+  <Description></Description>
+  <GUID>BAFA8A57862DD0653522E08D16DC2270</GUID>
+</iwresource:IWResource>

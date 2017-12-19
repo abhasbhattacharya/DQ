@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappingbuilder:DocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mappingbuilder="http://iwtrans.iwaysoftware.com/mappingbuilder">
+  <map>
+    <function description="Parameter list: (condition, THEN, ELSE).&#xA;If the condition (&lt;left_operand>&lt;operator>&lt;right_operand>) is true, it will return the THEN option, otherwise it will return the ELSE option." index="0" label="@IF" name="IF" type="2">
+      <parameter index="0" label="left_operand"/>
+      <parameter index="1" label="operator"/>
+      <parameter index="2" label="right_operand"/>
+      <parameter index="3" label="THEN"/>
+      <parameter index="4" label="ELSE"/>
+      <functionField description="Parameter list: (string, substring).&#xA;Returns a number that represents the first position&#xA;of a sub-string within an alpha or an alpha expression." index="0" label="@INSTR" name="INSTR" type="2">
+        <parameter index="0" label="string"/>
+        <parameter index="1" label="substring"/>
+        <functionField description="Parameter list: (sreg_name, default).&#xA;Returns the Managers' special register defined by the specified parameter. Executed if transform is run on the server." index="0" label="@SREG" name="SREG" type="2">
+          <parameter index="0" label="sreg_name"/>
+          <parameter index="1" label="default"/>
+          <functionField index="0" label="errorcontent" name="" type="4"/>
+          <functionField index="1" label="ERROR CONTENTS NOT FOUND" name="" type="4"/>
+        </functionField>
+        <functionField index="1" label="[WARNING]  Sheet" name="" type="4"/>
+      </functionField>
+      <functionField index="1" label="!=" name="" type="4"/>
+      <functionField index="2" label="0" name="" type="4"/>
+      <functionField description="Parameter list: (string).&#xA;Allows you to concatenate (join) strings." index="3" label="@CONCAT" name="CONCAT" type="2">
+        <parameter index="0" label="string"/>
+        <parameter index="1" label="string"/>
+        <parameter index="2" label="string"/>
+        <functionField index="0" label="Sheet " name="" type="4"/>
+        <functionField description="Parameter list: (string, trim_character).&#xA;Removes leading and trailing white space (blanks, tabs, linefeeds) or specified trim_characters&#xA;from an alpha string or an alpha expression." index="1" label="@TRIM" name="TRIM" type="2">
+          <parameter index="0" label="string"/>
+          <functionField description="Parameter list: (source_string, token_index, delimeters_string).&#xA;Returns string token from a delimited string." index="0" label="@STRTOKEN" name="STRTOKEN" type="2">
+            <parameter index="0" label="source_string"/>
+            <parameter index="1" label="token_index"/>
+            <parameter index="2" label="delimeters_string"/>
+            <functionField description="Parameter list: (source_string, token_index, delimeters_string).&#xA;Returns string token from a delimited string." index="0" label="@STRTOKEN" name="STRTOKEN" type="2">
+              <parameter index="0" label="source_string"/>
+              <parameter index="1" label="token_index"/>
+              <parameter index="2" label="delimeters_string"/>
+              <functionField description="Parameter list: (sreg_name, default).&#xA;Returns the Managers' special register defined by the specified parameter. Executed if transform is run on the server." index="0" label="@SREG" name="SREG" type="2">
+                <parameter index="0" label="sreg_name"/>
+                <parameter index="1" label="default"/>
+                <functionField index="0" label="errorcontent" name="" type="4"/>
+                <functionField index="1" label="ERROR CONTENTS NOT FOUND" name="" type="4"/>
+              </functionField>
+              <functionField index="1" label="2" name="" type="4"/>
+              <functionField index="2" label="[WARNING]  Sheet " name="" type="4"/>
+            </functionField>
+            <functionField index="1" label="1" name="" type="4"/>
+            <functionField index="2" label="in" name="" type="4"/>
+          </functionField>
+        </functionField>
+        <functionField index="2" label=" is missing." name="" type="4"/>
+      </functionField>
+      <functionField index="4" label="" name="" type="4"/>
+    </function>
+  </map>
+</mappingbuilder:DocumentRoot>

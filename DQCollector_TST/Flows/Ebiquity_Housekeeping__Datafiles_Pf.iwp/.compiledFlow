@@ -1,0 +1,111 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">Ebiquity_Housekeeping__Datafiles_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="4" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_filedir" active="true">com.ibi.agents.XDFileDirListAgent
+                  <parm name="directory">_sreg(Housekeeping.datafolder)</parm>
+                  <parm name="action">file</parm>
+                  <parm name="patterntype">regex</parm>
+                  <parm name="wanteos">false</parm>
+                  <return>success
+                     <agent key="7" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetPrimarySREGs" active="true">com.ibi.agents.XDSREGAgent
+                        <parm name="regtype">doc</parm>
+                        <parm name="scope">global</parm>
+                        <parm name="eval">false</parm>
+                        <parm name="nolog">false</parm>
+                        <parm name="nomarshall">false</parm>
+                        <parm name="wanteos">false</parm>
+                        <parm name="currentime">_timer()</parm>
+                        <return>success
+                           <agent key="6" flowcharttype="FLOWCHART_ITERATOR" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Iterator" active="true" iter="1">com.ibi.agents.XDIterXMLSplit
+                              <parm name="skipNodes">0</parm>
+                              <parm name="xpathExpr">XPATH(//dir/item[@type=&apos;file&apos;])</parm>
+                              <parm name="xpathIfl">false</parm>
+                              <parm name="crosssection">false</parm>
+                              <parm name="docstate">transient</parm>
+                              <parm name="enditer">false</parm>
+                              <parm name="return">status</parm>
+                              <parm name="xpathlevel">default</parm>
+                              <return>success
+                                 <agent key="8" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetPrimarySREGs1" active="true">com.ibi.agents.XDSREGAgent
+                                    <parm name="regtype">doc</parm>
+                                    <parm name="scope">global</parm>
+                                    <parm name="eval">false</parm>
+                                    <parm name="nolog">false</parm>
+                                    <parm name="nomarshall">false</parm>
+                                    <parm name="wanteos">false</parm>
+                                    <parm name="lastmod">XPATH(//dir/item/@type)</parm>
+                                    <return>success
+                                       <decision key="9" flowcharttype="FLOWCHART_STARTUP_DECISIONTEST" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="decision_Decision Test" active="true" type="test">_COND(_sreg(currentime) -_sreg(lastmod),ge,_sreg(Housekeeping.minimumfilesage))
+                                          <parm name="fctn">cond</parm>
+                                          <parm name="type">test</parm>
+                                          <parm name="parm1">_sreg(currentime) -_sreg(lastmod)</parm>
+                                          <parm name="parm2">_sreg(Housekeeping.minimumfilesage)</parm>
+                                          <parm name="op">ge</parm>
+                                          <return>true
+                                             <agent key="5" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DeleteFile" active="true">com.ibi.agents.XDPFFileOpsAgent
+                                                <parm name="operation">delete</parm>
+                                                <parm name="filefrom">_concat(XPATH(//dir/@base),&apos;\\&apos;,XPATH(//dir/item))</parm>
+                                                <parm name="filePattern">none</parm>
+                                                <parm name="isdirectory">false</parm>
+                                                <parm name="mkdir">false</parm>
+                                                <parm name="redoc">status</parm>
+                                                <parm name="action">input</parm>
+                                                <parm name="retry">0</parm>
+                                                <return>success
+                                                   <junction key="10" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction" active="true" count="2">
+                                                      <return>$complete
+                                                         <jump key="j1" xid="jump1" target="agent_Iterator"/>
+                                                      </return>
+                                                   </junction>
+                                                </return>
+                                             </agent>
+                                          </return>
+                                          <return>false
+                                             <junction key="10" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction_2" active="true" target="junction_Junction" source="yes"/>
+                                          </return>
+                                       </decision>
+                                    </return>
+                                 </agent>
+                              </return>
+                              <return>$eos
+                                 <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings/>
+   <errors/>
+   <dependencies>
+      <item type="agent" name="com.ibi.agents.XDFileDirListAgent"/>
+      <item type="agent" name="com.ibi.agents.XDSREGAgent"/>
+      <item type="agent" name="com.ibi.agents.XDIterXMLSplit"/>
+      <item type="agent" name="com.ibi.agents.XDPFFileOpsAgent"/>
+      <item type="sreg" name="currentime"/>
+      <item type="sreg" name="lastmod"/>
+      <item type="sreg" name="Housekeeping.minimumfilesage"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>Request to compile _COND(_sreg(currentime) -_sreg(lastmod),ge,_sreg(Housekeeping.minimumfilesage))</item>
+      <item>Sreg currentime in node 9 found in expression _COND(_sreg(currentime) -_sreg(lastmod),ge,_sreg(Housekeeping.minimumfilesage))</item>
+      <item>Sreg lastmod in node 9 found in expression _COND(_sreg(currentime) -_sreg(lastmod),ge,_sreg(Housekeeping.minimumfilesage))</item>
+      <item>Sreg Housekeeping.minimumfilesage in node 9 found in expression _COND(_sreg(currentime) -_sreg(lastmod),ge,_sreg(Housekeeping.minimumfilesage))</item>
+      <item>test recognized at 9 test: _COND(_sreg(currentime) -_sreg(lastmod),ge,_sreg(Housekeeping.minimumfilesage))</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>junction source recognized at node Junction (key 10) link to target junction_Junction</item>
+      <item>There are 10 relations</item>
+   </trace>
+</flow>

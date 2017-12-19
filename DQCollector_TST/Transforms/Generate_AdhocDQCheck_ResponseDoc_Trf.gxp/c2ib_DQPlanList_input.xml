@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dir base="C:\Projects\Ebiquity\Plans" count="6">
+   <item type="file" lastmod="1476462814554" lastmodstr="14 Oct 2016 16:33:34 GMT">BuyTypeLookupBuilder.plan</item>
+   <item type="file" lastmod="1477861149243" lastmodstr="30 Oct 2016 20:59:09 GMT">DomainLookupBuilder.plan</item>
+   <item type="file" lastmod="1479399214408" lastmodstr="17 Nov 2016 16:13:34 GMT">DQReasonCodeLookupBuilder.plan</item>
+   <item type="file" lastmod="1508851415122" lastmodstr="24 Oct 2017 13:23:35 GMT">PlanA.txt</item>
+   <item type="file" lastmod="1508851415122" lastmodstr="24 Oct 2017 13:23:35 GMT">PlanB.txt</item>
+   <item type="file" lastmod="1508851435092" lastmodstr="24 Oct 2017 13:23:55 GMT">PlanC.txt</item>
+</dir>

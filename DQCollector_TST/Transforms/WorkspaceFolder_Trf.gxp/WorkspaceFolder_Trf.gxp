@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+    <Template>
+        <TransformTemplate>
+            <TemplateMetadata>
+                <ModifiedDate>Dec 13, 2017</ModifiedDate>
+            </TemplateMetadata>
+            <CustomerExtensions>
+                <ProcessingInstruction/>
+                <NamespaceDeclaration>
+                    <Namespace prefix="xsi"  id="1"  uri="http://www.w3.org/2001/XMLSchema-instance" />
+                    <Namespace prefix="xs"  id="2"  uri="http://www.w3.org/2001/XMLSchema" />
+                </NamespaceDeclaration>
+            </CustomerExtensions>
+            <Mapping>
+                <Input format="XML" >
+                    <Parameter name="Namespace"  value="false" />
+                    <Parameter name="Trim"  value="false" />
+                    <Parameter name="Validate"  value="false" />
+                </Input>
+                <Output format="XML" >
+                    <Parameter name="Namespace"  value="false" />
+                    <Parameter name="Indent"  value="4" />
+                    <Parameter name="NullTag"  value="true" />
+                    <Parameter name="encoding"  value="UTF-8" />
+                    <Parameter name="Declaration"  value="true" />
+                    <Parameter name="DtdDeclaration"  value="false" />
+                    <Parameter name="Footer"  value="" />
+                    <Parameter name="Header"  value="" />
+                </Output>
+                <MapStructure>
+                    <Table>
+                        <Rules>
+                            <MapRule  output="workspace"  input="@PARENT()" />
+                                <MapRule  output="workspacefoldername"  input="@IF(@INSTR(@SREG('workspacefolder','WORKSPACE FOLDER NOT FOUND'),@FLIP(@STRTOKEN(@FLIP(@SREG('planfolder1','WORKSPACE FOLDER NOT FOUND')),'1','\'))) != '0','folder1',@IF(@INSTR(@SREG('workspacefolder','WORKSPACE FOLDER NOT FOUND'),@FLIP(@STRTOKEN(@FLIP(@SREG('planfolder2','WORKSPACE FOLDER NOT FOUND')),'1','\'))) != '0','folder2',@IF(@INSTR(@SREG('workspacefolder','WORKSPACE FOLDER NOT FOUND'),@FLIP(@STRTOKEN(@FLIP(@SREG('planfolder3','WORKSPACE FOLDER NOT FOUND')),'1','\'))) != '0','folder3',@IF(@INSTR(@SREG('workspacefolder','WORKSPACE FOLDER NOT FOUND'),@FLIP(@STRTOKEN(@FLIP(@SREG('planfoler4','WORKSPACE FOLDER NOT FOUND')),'1','\'))) != '0','folder4','folder5'))))" />
+                            <MapRule output="workspace" input="@ENDPARENT()"/>
+                        </Rules>
+                    </Table>
+                </MapStructure>
+            </Mapping>
+        </TransformTemplate>
+    </Template>
+    <Inputs>
+        <StructureFile/>
+    </Inputs>
+    <Output>
+        <StructureFile schemaRoot="#workspace"  display="../../../DQCollector/Schemas/c2ib_WorkspaceLoc_input.xsd/c2ib_WorkspaceLoc_input.xsd"  guid="72587A8B1B0F7D38F68DABF3612D3E4F"  type="xsd"  encoding="UTF-8" >../../schemas/72587A8B1B0F7D38F68DABF3612D3E4F/c2ib_WorkspaceLoc_input.xsd</StructureFile>
+    </Output>
+</Project>

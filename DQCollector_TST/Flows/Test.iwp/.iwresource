@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iwresource:IWResource xmlns:iwresource="http://iwresource.iwaysoftware.com/model/emf/iwresource" valid="true">
+  <Name>Test</Name>
+  <Type>process</Type>
+  <File>Test.iwp</File>
+  <Description></Description>
+  <GUID>FFFAC127343A8F9BD35EB6D0D762F349</GUID>
+  <targetServer>7.0.7</targetServer>
+</iwresource:IWResource>

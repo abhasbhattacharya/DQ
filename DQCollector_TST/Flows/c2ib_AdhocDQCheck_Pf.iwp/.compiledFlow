@@ -1,0 +1,190 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">c2ib_AdhocDQCheck_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="1" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="roottag">c2ib_AdhocDQCheck</parm>
+            <parm name="schema">c2ib_AdhocDQCheck_input</parm>
+            <parm name="location">schemas/76D5C404D8F6933E92B506F7A5402F88//c2ib_AdhocDQCheck_input.xsd</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="16" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_CONSTANTPAYLOAD" active="true">com.ibi.agents.XDConstantAgent
+                  <parm name="constant">_flatof()</parm>
+                  <parm name="format">xml</parm>
+                  <parm name="iserror">false</parm>
+                  <parm name="ifinput">always</parm>
+                  <parm name="wanteos">false</parm>
+                  <return>success
+                     <agent key="8" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetPrimarySREGs" active="true">com.ibi.agents.XDSREGAgent
+                        <parm name="regtype">user</parm>
+                        <parm name="scope">server</parm>
+                        <parm name="lock">lock</parm>
+                        <parm name="eval">false</parm>
+                        <parm name="nolog">false</parm>
+                        <parm name="nomarshall">false</parm>
+                        <parm name="wanteos">false</parm>
+                        <parm name="datatype">String</parm>
+                        <parm name="planReference">_xpath(/c2ib_AdhocDQCheck/planReference)</parm>
+                        <parm name="callbackReference">_xpath(/c2ib_AdhocDQCheck/callbackReference)</parm>
+                        <parm name="responseURL">_xpath(//c2ib_AdhocDQCheck/responseURL)</parm>
+                        <parm name="encodedURL1">_concat(&apos;?sessionToken=&apos;,_sreg(DQCollector.sessionToken))</parm>
+                        <parm name="encodedURL2">_concat(&apos;&amp;clientSessionToken=&apos;,_sreg(DQCollector.clientSessionToken))</parm>
+                        <parm name="encodedURL">_concat(_sreg(responseURL),_sreg(encodedURL1),_sreg(encodedURL2))</parm>
+                        <parm name="Success">Success</parm>
+                        <parm name="filename">_token(_sreg(responseURL), &apos;/&apos;,_count(_sreg(responseURL), all, &apos;/&apos;))</parm>
+                        <parm name="Error">Error</parm>
+                        <parm name="StatusCode">0</parm>
+                        <return>success
+                           <agent key="12" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetHttpHeader" active="true">com.ibi.agents.XDSREGAgent
+                              <parm name="regtype">hdr</parm>
+                              <parm name="scope">global</parm>
+                              <parm name="datatype">String</parm>
+                              <parm name="eval">false</parm>
+                              <parm name="nolog">false</parm>
+                              <parm name="nomarshall">false</parm>
+                              <parm name="wanteos">false</parm>
+                              <parm name="Accept">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</parm>
+                              <parm name="Connection">keep-alive</parm>
+                              <return>success
+                                 <agent key="3" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA_Adhoc" active="false">com.ibi.agents.XDQAAgent
+                                    <parm name="where">C:\temp\testQA*.xml</parm>
+                                    <parm name="when">always</parm>
+                                    <parm name="b64">false</parm>
+                                    <return>success
+                                       <agent key="13" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_c2ib_getFile_nhttpEmitAgent" active="true">com.ibi.agents.XDNHttpEmitAgent
+                                          <parm name="url">_sreg(encodedURL)</parm>
+                                          <parm name="httpclientprov">HttpClient</parm>
+                                          <parm name="method">GET</parm>
+                                          <parm name="type">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</parm>
+                                          <parm name="replytoreqhdrns">none</parm>
+                                          <parm name="replytoreqbphdrns">none</parm>
+                                          <parm name="replytoresphdrns">default</parm>
+                                          <parm name="replytocompression">none</parm>
+                                          <parm name="replytocompressrequest">none</parm>
+                                          <parm name="replaceconnection">true</parm>
+                                          <parm name="expectcontinue">false</parm>
+                                          <parm name="sendchunked">false</parm>
+                                          <parm name="maxreqsize">0</parm>
+                                          <parm name="maxrespsize">0</parm>
+                                          <parm name="wantpersist">false</parm>
+                                          <parm name="emittimeout">60</parm>
+                                          <parm name="preemptiveauth">default</parm>
+                                          <parm name="returnresponse">response</parm>
+                                          <parm name="nopreemit">true</parm>
+                                          <parm name="base64Response">false</parm>
+                                          <return>success
+                                             <agent key="9" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_fileemit" active="true">com.ibi.agents.XDFileEmitAgent
+                                                <parm name="xpathlevel">default</parm>
+                                                <parm name="directory">_sreg(DQCollector.OutputFileLocation)</parm>
+                                                <parm name="pattern">_sreg(filename)</parm>
+                                                <parm name="nopreemit">true</parm>
+                                                <parm name="return">status</parm>
+                                                <parm name="b64">false</parm>
+                                                <parm name="trans">false</parm>
+                                                <parm name="append">false</parm>
+                                                <parm name="appendcrlf">false</parm>
+                                                <parm name="outputzero">false</parm>
+                                                <parm name="wanteos">false</parm>
+                                                <return>success
+                                                   <agent key="7" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Generate_AdhocDQProcessing_ResponseDoc_Trf" active="true">com.ibi.agents.XDTransformAgent
+                                                      <parm name="engine">iway</parm>
+                                                      <parm name="transform">Generate_AdhocDQProcessing_ResponseDoc_Trf</parm>
+                                                      <return>success
+                                                         <agent key="4" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_c2ib.DQProcessing,Queue" active="true">com.ibi.agents.XDInternalEmitAgent
+                                                            <parm name="queue">c2ib.DQProcessing</parm>
+                                                            <parm name="wantuser">false</parm>
+                                                            <parm name="priority">4</parm>
+                                                            <parm name="puttimeout">3000</parm>
+                                                            <parm name="replytoreqns">default</parm>
+                                                            <parm name="returnresponse">input</parm>
+                                                            <parm name="nopreemit">true</parm>
+                                                            <parm name="trans">true</parm>
+                                                            <parm name="wanteos">false</parm>
+                                                            <parm name="timeout">0</parm>
+                                                            <return>success
+                                                               <agent key="10" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Generate_AdhocDQCheck_ResponseDoc_Trf" active="true">com.ibi.agents.XDTransformAgent
+                                                                  <parm name="engine">iway</parm>
+                                                                  <parm name="transform">Generate_AdhocDQCheck_ResponseDoc_Trf</parm>
+                                                                  <return>success
+                                                                     <agent key="6" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA_AdhocAfterEmit" active="false">com.ibi.agents.XDQAAgent
+                                                                        <parm name="where">C:\temp\testQA*.xml</parm>
+                                                                        <parm name="when">always</parm>
+                                                                        <parm name="b64">false</parm>
+                                                                        <return>success
+                                                                           <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="2">
+                                                                              <parm name="terminate">false</parm>
+                                                                              <parm name="roottag">c2ib_AdhocDQCheck</parm>
+                                                                              <parm name="schema">c2ib_AdhocDQCheck_Response</parm>
+                                                                              <parm name="location">schemas/4132DB3149E99831037B813436B43536/c2ib_AdhocDQCheck_Response.xsd</parm>
+                                                                           </end>
+                                                                        </return>
+                                                                     </agent>
+                                                                  </return>
+                                                               </agent>
+                                                            </return>
+                                                         </agent>
+                                                      </return>
+                                                   </agent>
+                                                </return>
+                                             </agent>
+                                          </return>
+                                          <return>$error,$fail,fail_connect
+                                             <agent key="5" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Error_nhttpEmitAgent" active="true">com.ibi.agents.XDConstantAgent
+                                                <parm name="constant">&lt;c2ib_AdhocDQCheck&gt;&lt;errorNumber&gt;100&lt;/errorNumber&gt;&lt;errorDescription&gt;Error while retrieving the file from responseURL.&lt;/errorDescription&gt;&lt;/c2ib_AdhocDQCheck&gt;</parm>
+                                                <parm name="format">xml</parm>
+                                                <parm name="iserror">false</parm>
+                                                <parm name="ifinput">always</parm>
+                                                <parm name="wanteos">false</parm>
+                                                <return>success
+                                                   <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="2">
+                                                      <parm name="terminate">false</parm>
+                                                      <parm name="roottag">c2ib_AdhocDQCheck</parm>
+                                                      <parm name="schema">c2ib_AdhocDQCheck_Response</parm>
+                                                      <parm name="location">schemas/4132DB3149E99831037B813436B43536/c2ib_AdhocDQCheck_Response.xsd</parm>
+                                                   </end>
+                                                </return>
+                                             </agent>
+                                          </return>
+                                       </agent>
+                                    </return>
+                                 </agent>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings>
+      <warning key="13" code="217" level="0" text="Service com.ibi.agents.XDNHttpEmitAgent in node node c2ib_getFile_nhttpEmitAgent (key 13): cannot be located for loading; check classpath">
+         <parm order="1">com.ibi.agents.XDNHttpEmitAgent</parm>
+         <parm order="2">c2ib_getFile_nhttpEmitAgent</parm>
+      </warning>
+   </warnings>
+   <errors/>
+   <dependencies>
+      <item type="schema" name="c2ib_AdhocDQCheck_input" guid="76D5C404D8F6933E92B506F7A5402F88"/>
+      <item type="schema" name="c2ib_AdhocDQCheck_Response" guid="4132DB3149E99831037B813436B43536"/>
+      <item type="agent" name="com.ibi.agents.XDConstantAgent"/>
+      <item type="agent" name="com.ibi.agents.XDSREGAgent"/>
+      <item type="agent" name="com.ibi.agents.XDQAAgent"/>
+      <item type="agent" name="com.ibi.agents.XDNHttpEmitAgent"/>
+      <item type="agent" name="com.ibi.agents.XDFileEmitAgent"/>
+      <item type="agent" name="com.ibi.agents.XDTransformAgent"/>
+      <item type="agent" name="com.ibi.agents.XDInternalEmitAgent"/>
+      <item type="transform" name="Generate_AdhocDQProcessing_ResponseDoc_Trf" guid="86BDA2CE3DC320EBD7180A3BF11EA9C6"/>
+      <item type="transform" name="Generate_AdhocDQCheck_ResponseDoc_Trf" guid="E7B4022D82EFEBAAADFC10B8F1BEE25C"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>There are 13 relations</item>
+   </trace>
+</flow>

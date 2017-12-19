@@ -1,0 +1,26 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="c2ib_GetDQPlanList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:byte" name="errorNumber"/>
+        <xs:element name="DQPlanList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DQPlan" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="planReference"/>
+                    <xs:element type="xs:string" name="planLastModifiedTimestamp"/>
+                    <xs:element type="xs:string" name="planFolder"/>
+                    <xs:element type="xs:string" name="planName"/>
+                    <xs:element type="xs:string" name="planDescription"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

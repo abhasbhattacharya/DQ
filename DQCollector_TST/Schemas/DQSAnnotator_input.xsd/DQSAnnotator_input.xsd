@@ -1,0 +1,12 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DQSAnnotator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="errorLogFilePath"/>
+        <xs:element type="xs:string" name="dataFilePath"/>
+        <xs:element type="xs:string" name="annotatedFilePath"/>
+        <xs:element type="xs:string" name="sheetLevelErrorMessage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

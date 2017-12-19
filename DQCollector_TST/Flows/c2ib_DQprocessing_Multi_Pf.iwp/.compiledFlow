@@ -1,0 +1,365 @@
+
+<flow compiler="7.0.7" format="3" edition="community">
+   <pflow configId="iWay Registry" server="NL-57HFBS1" iwayversion="7.0.6">c2ib_DQprocessing_Multi_Pf
+      <return>success
+         <start key="1" flowcharttype="FLOWCHART_STARTUP_START" xdebuglow="1" xdebughigh="1" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="start_Start" active="true">
+            <parm name="Debug">true</parm>
+            <parm name="roottag">c2ib_AdhocDQCheck_output</parm>
+            <parm name="schema">c2ib_AdhocDQCheck_output</parm>
+            <parm name="location">schemas/48E6C3F930F0D64DC9C86DD53D439FB8/c2ib_AdhocDQCheck_output.xsd</parm>
+            <parm name="timeout">0</parm>
+            <parm name="debug"/>
+            <return>$complete
+               <agent key="18" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_CONSTANTPAYLOAD" active="true">com.ibi.agents.XDConstantAgent
+                  <parm name="constant">_flatof()</parm>
+                  <parm name="format">xml</parm>
+                  <parm name="iserror">false</parm>
+                  <parm name="ifinput">always</parm>
+                  <parm name="wanteos">false</parm>
+                  <return>success
+                     <agent key="4" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetPrimarySREGs" active="true">com.ibi.agents.XDSREGAgent
+                        <parm name="regtype">doc</parm>
+                        <parm name="scope">global</parm>
+                        <parm name="eval">false</parm>
+                        <parm name="nolog">false</parm>
+                        <parm name="nomarshall">false</parm>
+                        <parm name="wanteos">false</parm>
+                        <parm name="templatefileName">_xpath(/c2ib_AdhocDQCheck_output/TemplateFileName)</parm>
+                        <parm name="paramsfileName">_concat(_sreg(DQCollector.OutputFileLocation),&apos;\\&apos;,_sreg(templatefileName))</parm>
+                        <parm name="planReference">_xpath(/c2ib_AdhocDQCheck_output/planReference)</parm>
+                        <parm name="workspacefolder">_token(_sreg(planReference), \\,1)</parm>
+                        <parm name="plan">_token(_sreg(planReference),\\,2)</parm>
+                        <parm name="planfolder1">C:\\iWay\\dqs\\workspace\\DQSDEV</parm>
+                        <parm name="planfolder2">C:\\iWay\\dqs\\workspace\\DQS DEV</parm>
+                        <parm name="planfolder3">C:\\iWay\\dqs\\workspace\\DQSDEV3</parm>
+                        <parm name="planfolder4">C:\\iWay\\dqs\\workspace\\DQSDEV4</parm>
+                        <parm name="planfolder5">C:\\iWay\\dqs\\workspace\\DQSDEV5</parm>
+                        <parm name="comp1">_concat(_sreg(DQCollector.DQPlanFolder1),&apos;\\&apos;,_sreg(plan))</parm>
+                        <parm name="compName1">_qval(_sreg(comp1),double)</parm>
+                        <parm name="comp2">_concat(_sreg(DQCollector.DQPlanFolder2),&apos;\\&apos;,_sreg(plan))</parm>
+                        <parm name="compName2">_qval(_sreg(comp2),double)</parm>
+                        <parm name="comp3">_concat(_sreg(DQCollector.DQPlanFolder3),&apos;\\&apos;,_sreg(plan))</parm>
+                        <parm name="compName3">_qval(_sreg(comp3),double)</parm>
+                        <parm name="comp4">_concat(_sreg(DQCollector.DQPlanFolder4),&apos;\\&apos;,_sreg(plan))</parm>
+                        <parm name="compName4">_qval(_sreg(comp4),double)</parm>
+                        <parm name="comp5">_concat(_sreg(DQCollector.DQPlanFolder5),&apos;\\&apos;,_sreg(plan))</parm>
+                        <parm name="compName5">_qval(_sreg(comp5),double)</parm>
+                        <parm name="runcifcmd">c:\iway\dqs\runtime\bin\runcif.bat -params.fileName=</parm>
+                        <parm name="scorefile">_concat(&apos;OUTPUT_&apos;,_token(_sreg(TemplateFileName),\.,1),&apos;.csv&apos;)</parm>
+                        <parm name="scorefileName">_concat(_sreg(DQCollector.OutputFileLocation),&apos;\\&apos;,_sreg(scorefile))</parm>
+                        <parm name="annotatedfile">_concat(&apos;ANNOTATED_&apos;,_sreg(templatefileName))</parm>
+                        <parm name="annotatedfileName">_concat(_sreg(DQCollector.AnnotatedFileLocation),&apos;\\&apos;,_sreg(annotatedfile))</parm>
+                        <parm name="outfile">_concat(&apos;ERROR_&apos;,_token(_sreg(TemplateFileName),\.,1),&apos;.xls&apos;)</parm>
+                        <parm name="outfileName">_concat(_sreg(DQCollector.ErrorFileLocation),&apos;\\&apos;,_sreg(outfile))</parm>
+                        <parm name="sessionToken">_xpath(/c2ib_AdhocDQCheck_output/sessionToken)</parm>
+                        <parm name="clientSessionToken">_xpath(/c2ib_AdhocDQCheck_output/clientSessionToken)</parm>
+                        <parm name="callbackReference">_xpath(/c2ib_AdhocDQCheck_output/callbackReference)</parm>
+                        <return>success
+                           <agent key="27" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_GenerateEmptyWorkspacelocInput" active="true">com.ibi.agents.XDConstantAgent
+                              <parm name="constant">&lt;empty&gt;&lt;/empty&gt;</parm>
+                              <parm name="format">xml</parm>
+                              <parm name="iserror">false</parm>
+                              <parm name="ifinput">always</parm>
+                              <parm name="wanteos">false</parm>
+                              <return>success
+                                 <agent key="3" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_WorkspaceFolder_Trf" active="true">com.ibi.agents.XDTransformAgent
+                                    <parm name="engine">iway</parm>
+                                    <parm name="transform">WorkspaceFolder_Trf</parm>
+                                    <return>success
+                                       <agent key="29" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_ReadWorkspaceFolder" active="true">com.ibi.agents.XDSREGAgent
+                                          <parm name="regtype">doc</parm>
+                                          <parm name="scope">global</parm>
+                                          <parm name="eval">false</parm>
+                                          <parm name="nolog">false</parm>
+                                          <parm name="nomarshall">false</parm>
+                                          <parm name="wanteos">false</parm>
+                                          <parm name="datatype">String</parm>
+                                          <parm name="planfolderloc">_xpath(/workspace/workspacefoldername)</parm>
+                                          <return>success
+                                             <decision key="6" flowcharttype="FLOWCHART_STARTUP_DECISIONSWITCH" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="decision_WorkspaceFolder?" active="true" type="switch">_sreg(planfolderloc)
+                                                <parm name="type">switch</parm>
+                                                <parm name="parm1">_sreg(planfolderloc)</parm>
+                                                <parm name="fctn">cond</parm>
+                                                <return>folder1
+                                                   <agent key="24" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DQSCMD1" active="true">com.ibi.agents.XDRunCmdAgent
+                                                      <parm name="cmd">_concat(&apos;cmd /C &apos;,_sreg(runcifcmd),_sreg(paramsfileName), &apos; -params.scorefileName=&apos;,_sreg(scorefileName),&apos; -params.outfileName=&apos;,_sreg(outfileName),&apos; -runtimeConfig &apos;,&apos;C:\\iWay\\dqs\\workspace\\DQSDEV\\runtimeCfg.xml&apos;,&apos; &apos;,_sreg(compName1),&apos;1&gt;C:\\Projects\\error.txt 2&gt;&amp;1&apos;)</parm>
+                                                      <parm name="encoding">platform</parm>
+                                                      <parm name="cdata">false</parm>
+                                                      <parm name="inclq">false</parm>
+                                                      <parm name="timeout">0</parm>
+                                                      <parm name="detach">false</parm>
+                                                      <parm name="wanteos">false</parm>
+                                                      <return>$complete
+                                                         <junction key="25" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction" active="true" count="5">
+                                                            <return>$complete
+                                                               <agent key="10" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_ReadErrorContents" active="true">com.ibi.agents.XDSREGAgent
+                                                                  <parm name="regtype">doc</parm>
+                                                                  <parm name="scope">global</parm>
+                                                                  <parm name="eval">false</parm>
+                                                                  <parm name="nolog">false</parm>
+                                                                  <parm name="nomarshall">false</parm>
+                                                                  <parm name="wanteos">false</parm>
+                                                                  <parm name="datatype">String</parm>
+                                                                  <parm name="errorcontent">_file(&apos;C:\\Projects\\error.txt&apos;,&apos;UTF-8&apos;)</parm>
+                                                                  <return>success
+                                                                     <agent key="7" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Read File" active="true">com.ibi.agents.XDPFFileReadAgent
+                                                                        <parm name="name">C:\\Projects\\error.txt</parm>
+                                                                        <parm name="delete">true</parm>
+                                                                        <parm name="format">flat</parm>
+                                                                        <parm name="embed">false</parm>
+                                                                        <parm name="base64Encode">false</parm>
+                                                                        <parm name="retry">0</parm>
+                                                                        <return>success
+                                                                           <agent key="17" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_GenerateEmptyxAnnotateInput" active="true">com.ibi.agents.XDConstantAgent
+                                                                              <parm name="constant">&lt;empty&gt;&lt;/empty&gt;</parm>
+                                                                              <parm name="format">xml</parm>
+                                                                              <parm name="iserror">false</parm>
+                                                                              <parm name="ifinput">always</parm>
+                                                                              <parm name="wanteos">false</parm>
+                                                                              <return>success
+                                                                                 <agent key="8" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_GenerateDQSAnnotator_Input" active="true">com.ibi.agents.XDTransformAgent
+                                                                                    <parm name="engine">iway</parm>
+                                                                                    <parm name="transform">GenerateDQSAnnotator_Input</parm>
+                                                                                    <return>success
+                                                                                       <agent key="16" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DQSAnnotator_nhttpEmitAgent" active="true">com.ibi.agents.XDNHttpEmitAgent
+                                                                                          <parm name="url">_sreg(DQSAnnotator.targetURL)</parm>
+                                                                                          <parm name="httpclientprov">HttpClient</parm>
+                                                                                          <parm name="method">POST</parm>
+                                                                                          <parm name="type">application/XML</parm>
+                                                                                          <parm name="user">_sreg(DQSAnnotator.userID)</parm>
+                                                                                          <parm name="password">_sreg(DQSAnnotator.password)</parm>
+                                                                                          <parm name="replytoreqhdrns">none</parm>
+                                                                                          <parm name="replytoreqbphdrns">none</parm>
+                                                                                          <parm name="replytoresphdrns">default</parm>
+                                                                                          <parm name="replytocompression">none</parm>
+                                                                                          <parm name="replytocompressrequest">none</parm>
+                                                                                          <parm name="replaceconnection">true</parm>
+                                                                                          <parm name="expectcontinue">false</parm>
+                                                                                          <parm name="sendchunked">false</parm>
+                                                                                          <parm name="maxreqsize">256KB</parm>
+                                                                                          <parm name="maxrespsize">256KB</parm>
+                                                                                          <parm name="wantpersist">false</parm>
+                                                                                          <parm name="emittimeout">60</parm>
+                                                                                          <parm name="preemptiveauth">default</parm>
+                                                                                          <parm name="returnresponse">response</parm>
+                                                                                          <parm name="nopreemit">true</parm>
+                                                                                          <parm name="base64Response">false</parm>
+                                                                                          <return>success
+                                                                                             <agent key="19" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_SetAnnotatorSREGs" active="true">com.ibi.agents.XDSREGAgent
+                                                                                                <parm name="regtype">doc</parm>
+                                                                                                <parm name="scope">global</parm>
+                                                                                                <parm name="eval">false</parm>
+                                                                                                <parm name="nolog">false</parm>
+                                                                                                <parm name="nomarshall">false</parm>
+                                                                                                <parm name="wanteos">false</parm>
+                                                                                                <parm name="Annotatorerrnum">_xpath(//DQSAnnotator/errorNumber)</parm>
+                                                                                                <parm name="Annotatorerrmsg">_xpath(//DQSAnnotator/errorMessage)</parm>
+                                                                                                <return>success
+                                                                                                   <agent key="15" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_StoreScoreOutput" active="true">com.ibi.agents.XDSREGAgent
+                                                                                                      <parm name="regtype">doc</parm>
+                                                                                                      <parm name="scope">global</parm>
+                                                                                                      <parm name="eval">false</parm>
+                                                                                                      <parm name="nolog">false</parm>
+                                                                                                      <parm name="nomarshall">false</parm>
+                                                                                                      <parm name="wanteos">false</parm>
+                                                                                                      <parm name="datatype">String</parm>
+                                                                                                      <parm name="planscore">_file(_sreg(scorefileName),&apos;UTF-8&apos;)</parm>
+                                                                                                      <return>success
+                                                                                                         <agent key="14" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_RemoveScorefile" active="true">com.ibi.agents.XDPFFileReadAgent
+                                                                                                            <parm name="name">_sreg(scorefileName)</parm>
+                                                                                                            <parm name="delete">true</parm>
+                                                                                                            <parm name="format">flat</parm>
+                                                                                                            <parm name="embed">false</parm>
+                                                                                                            <parm name="base64Encode">false</parm>
+                                                                                                            <parm name="retry">0</parm>
+                                                                                                            <return>$complete
+                                                                                                               <agent key="20" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_QA_AdhocAfterEmit1" active="false">com.ibi.agents.XDQAAgent
+                                                                                                                  <parm name="where">C:\Projects\testQA*.xml</parm>
+                                                                                                                  <parm name="when">always</parm>
+                                                                                                                  <parm name="b64">false</parm>
+                                                                                                                  <return>success
+                                                                                                                     <agent key="11" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_RemovePlanErrorOutputfile" active="true">com.ibi.agents.XDPFFileReadAgent
+                                                                                                                        <parm name="name">_sreg(outfileName)</parm>
+                                                                                                                        <parm name="delete">true</parm>
+                                                                                                                        <parm name="format">flat</parm>
+                                                                                                                        <parm name="embed">false</parm>
+                                                                                                                        <parm name="base64Encode">false</parm>
+                                                                                                                        <parm name="retry">0</parm>
+                                                                                                                        <return>$complete
+                                                                                                                           <agent key="13" flowcharttype="FLOWCHART_STARTUP_FILE" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_RemoveTemplateFile" active="true">com.ibi.agents.XDPFFileReadAgent
+                                                                                                                              <parm name="name">_sreg(paramsfileName)</parm>
+                                                                                                                              <parm name="delete">true</parm>
+                                                                                                                              <parm name="format">flat</parm>
+                                                                                                                              <parm name="embed">false</parm>
+                                                                                                                              <parm name="base64Encode">false</parm>
+                                                                                                                              <parm name="retry">0</parm>
+                                                                                                                              <return>$complete
+                                                                                                                                 <agent key="12" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_GenerateEmptyDQResponseInput" active="true">com.ibi.agents.XDConstantAgent
+                                                                                                                                    <parm name="constant">&lt;empty&gt;&lt;/empty&gt;</parm>
+                                                                                                                                    <parm name="format">xml</parm>
+                                                                                                                                    <parm name="iserror">false</parm>
+                                                                                                                                    <parm name="ifinput">always</parm>
+                                                                                                                                    <parm name="wanteos">false</parm>
+                                                                                                                                    <return>success
+                                                                                                                                       <agent key="9" flowcharttype="FLOWCHART_TRANSFORM" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_Generate_ReturnDQProcessing_Input_Trf" active="true">com.ibi.agents.XDTransformAgent
+                                                                                                                                          <parm name="engine">iway</parm>
+                                                                                                                                          <parm name="transform">Generate_ReturnDQProcessing_Input_Trf</parm>
+                                                                                                                                          <return>success
+                                                                                                                                             <agent key="5" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_ib2c.DQResponseHandling.queue" active="true">com.ibi.agents.XDInternalEmitAgent
+                                                                                                                                                <parm name="queue">ib2c.DQResponseHandling</parm>
+                                                                                                                                                <parm name="wantuser">false</parm>
+                                                                                                                                                <parm name="priority">4</parm>
+                                                                                                                                                <parm name="puttimeout">3000</parm>
+                                                                                                                                                <parm name="replytoreqns">default</parm>
+                                                                                                                                                <parm name="returnresponse">input</parm>
+                                                                                                                                                <parm name="nopreemit">true</parm>
+                                                                                                                                                <parm name="trans">true</parm>
+                                                                                                                                                <parm name="wanteos">false</parm>
+                                                                                                                                                <parm name="timeout">0</parm>
+                                                                                                                                                <return>success
+                                                                                                                                                   <end key="2" flowcharttype="FLOWCHART_STARTUP_END" xdebuglow="1" xdebughigh="99999" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="end_End" active="true" count="1"/>
+                                                                                                                                                </return>
+                                                                                                                                             </agent>
+                                                                                                                                          </return>
+                                                                                                                                       </agent>
+                                                                                                                                    </return>
+                                                                                                                                 </agent>
+                                                                                                                              </return>
+                                                                                                                           </agent>
+                                                                                                                        </return>
+                                                                                                                     </agent>
+                                                                                                                  </return>
+                                                                                                               </agent>
+                                                                                                            </return>
+                                                                                                         </agent>
+                                                                                                      </return>
+                                                                                                   </agent>
+                                                                                                </return>
+                                                                                             </agent>
+                                                                                          </return>
+                                                                                       </agent>
+                                                                                    </return>
+                                                                                 </agent>
+                                                                              </return>
+                                                                           </agent>
+                                                                        </return>
+                                                                     </agent>
+                                                                  </return>
+                                                               </agent>
+                                                            </return>
+                                                         </junction>
+                                                      </return>
+                                                   </agent>
+                                                </return>
+                                                <return>folder2
+                                                   <agent key="22" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DQSCMD2" active="true">com.ibi.agents.XDRunCmdAgent
+                                                      <parm name="cmd">_concat(&apos;cmd /C &apos;,_sreg(runcifcmd),_sreg(paramsfileName), &apos; -params.scorefileName=&apos;,_sreg(scorefileName),&apos; -params.outfileName=&apos;,_sreg(outfileName),&apos; -runtimeConfig &apos;,&apos;C:\\iWay\\dqs\\workspace\\DQSDEV\\runtimeCfg.xml&apos;,&apos; &apos;,_sreg(compName2),&apos;1&gt;C:\\Projects\\error.txt 2&gt;&amp;1&apos;)</parm>
+                                                      <parm name="encoding">platform</parm>
+                                                      <parm name="cdata">false</parm>
+                                                      <parm name="inclq">false</parm>
+                                                      <parm name="timeout">0</parm>
+                                                      <parm name="detach">false</parm>
+                                                      <parm name="wanteos">false</parm>
+                                                      <return>$complete
+                                                         <junction key="25" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction_2" active="true" target="junction_Junction" source="yes"/>
+                                                      </return>
+                                                   </agent>
+                                                </return>
+                                                <return>folder3
+                                                   <agent key="23" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DQSCMD3" active="true">com.ibi.agents.XDRunCmdAgent
+                                                      <parm name="cmd">_concat(&apos;cmd /C &apos;,_sreg(runcifcmd),_sreg(paramsfileName), &apos; -params.scorefileName=&apos;,_sreg(scorefileName),&apos; -params.outfileName=&apos;,_sreg(outfileName),&apos; -runtimeConfig &apos;,&apos;C:\\iWay\\dqs\\workspace\\DQSDEV\\runtimeCfg.xml&apos;,&apos; &apos;,_sreg(compName3),&apos;1&gt;C:\\Projects\\error.txt 2&gt;&amp;1&apos;)</parm>
+                                                      <parm name="encoding">platform</parm>
+                                                      <parm name="cdata">false</parm>
+                                                      <parm name="inclq">false</parm>
+                                                      <parm name="timeout">0</parm>
+                                                      <parm name="detach">false</parm>
+                                                      <parm name="wanteos">false</parm>
+                                                      <return>$complete
+                                                         <junction key="25" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction_3" active="true" target="junction_Junction" source="yes"/>
+                                                      </return>
+                                                   </agent>
+                                                </return>
+                                                <return>folder4
+                                                   <agent key="26" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DQSCMD4" active="true">com.ibi.agents.XDRunCmdAgent
+                                                      <parm name="cmd">_concat(&apos;cmd /C &apos;,_sreg(runcifcmd),_sreg(paramsfileName), &apos; -params.scorefileName=&apos;,_sreg(scorefileName),&apos; -params.outfileName=&apos;,_sreg(outfileName),&apos; -runtimeConfig &apos;,&apos;C:\\iWay\\dqs\\workspace\\DQSDEV\\runtimeCfg.xml&apos;,&apos; &apos;,_sreg(compName4),&apos;1&gt;C:\\Projects\\error.txt 2&gt;&amp;1&apos;)</parm>
+                                                      <parm name="encoding">platform</parm>
+                                                      <parm name="cdata">false</parm>
+                                                      <parm name="inclq">false</parm>
+                                                      <parm name="timeout">0</parm>
+                                                      <parm name="detach">false</parm>
+                                                      <parm name="wanteos">false</parm>
+                                                      <return>$complete
+                                                         <junction key="25" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction_4" active="true" target="junction_Junction" source="yes"/>
+                                                      </return>
+                                                   </agent>
+                                                </return>
+                                                <return>folder5
+                                                   <agent key="21" flowcharttype="FLOWCHART_AGENT" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="agent_DQSCMD5" active="true">com.ibi.agents.XDRunCmdAgent
+                                                      <parm name="cmd">_concat(&apos;cmd /C &apos;,_sreg(runcifcmd),_sreg(paramsfileName), &apos; -params.scorefileName=&apos;,_sreg(scorefileName),&apos; -params.outfileName=&apos;,_sreg(outfileName),&apos; -runtimeConfig &apos;,&apos;C:\\iWay\\dqs\\workspace\\DQSDEV\\runtimeCfg.xml&apos;,&apos; &apos;,_sreg(compName5),&apos;1&gt;C:\\Projects\\error.txt 2&gt;&amp;1&apos;)</parm>
+                                                      <parm name="encoding">platform</parm>
+                                                      <parm name="cdata">false</parm>
+                                                      <parm name="inclq">false</parm>
+                                                      <parm name="timeout">0</parm>
+                                                      <parm name="detach">false</parm>
+                                                      <parm name="wanteos">false</parm>
+                                                      <return>$complete
+                                                         <junction key="25" flowcharttype="FLOWCHART_STARTUP_JUNCTION" xdebuglow="1" xdebughigh="10" xdebugoffset="0" xdebuglen="4096" xdebug="std" xid="junction_Junction_5" active="true" target="junction_Junction" source="yes"/>
+                                                      </return>
+                                                   </agent>
+                                                </return>
+                                             </decision>
+                                          </return>
+                                       </agent>
+                                    </return>
+                                 </agent>
+                              </return>
+                           </agent>
+                        </return>
+                     </agent>
+                  </return>
+               </agent>
+            </return>
+         </start>
+      </return>
+   </pflow>
+   <warnings>
+      <warning key="16" code="217" level="0" text="Service com.ibi.agents.XDNHttpEmitAgent in node node DQSAnnotator_nhttpEmitAgent (key 16): cannot be located for loading; check classpath">
+         <parm order="1">com.ibi.agents.XDNHttpEmitAgent</parm>
+         <parm order="2">DQSAnnotator_nhttpEmitAgent</parm>
+      </warning>
+      <warning key="24" code="446" level="0" text="OnComplete is only edge from service that has specific edges available (e.g. &apos;success&apos;, &apos;fail_operation&apos;, &apos;fail_parse&apos;,...). This can result in unexpected flow routing"/>
+      <warning key="22" code="446" level="0" text="OnComplete is only edge from service that has specific edges available (e.g. &apos;success&apos;, &apos;fail_operation&apos;, &apos;fail_parse&apos;,...). This can result in unexpected flow routing"/>
+      <warning key="23" code="446" level="0" text="OnComplete is only edge from service that has specific edges available (e.g. &apos;success&apos;, &apos;fail_operation&apos;, &apos;fail_parse&apos;,...). This can result in unexpected flow routing"/>
+      <warning key="26" code="446" level="0" text="OnComplete is only edge from service that has specific edges available (e.g. &apos;success&apos;, &apos;fail_operation&apos;, &apos;fail_parse&apos;,...). This can result in unexpected flow routing"/>
+      <warning key="21" code="446" level="0" text="OnComplete is only edge from service that has specific edges available (e.g. &apos;success&apos;, &apos;fail_operation&apos;, &apos;fail_parse&apos;,...). This can result in unexpected flow routing"/>
+   </warnings>
+   <errors/>
+   <dependencies>
+      <item type="schema" name="c2ib_AdhocDQCheck_output" guid="48E6C3F930F0D64DC9C86DD53D439FB8"/>
+      <item type="agent" name="com.ibi.agents.XDConstantAgent"/>
+      <item type="agent" name="com.ibi.agents.XDSREGAgent"/>
+      <item type="agent" name="com.ibi.agents.XDTransformAgent"/>
+      <item type="agent" name="com.ibi.agents.XDRunCmdAgent"/>
+      <item type="agent" name="com.ibi.agents.XDPFFileReadAgent"/>
+      <item type="agent" name="com.ibi.agents.XDNHttpEmitAgent"/>
+      <item type="agent" name="com.ibi.agents.XDQAAgent"/>
+      <item type="agent" name="com.ibi.agents.XDInternalEmitAgent"/>
+      <item type="transform" name="WorkspaceFolder_Trf" guid="217E66C8F613569EEA284F20F90A41F9"/>
+      <item type="transform" name="GenerateDQSAnnotator_Input" guid="CB996AC0380F8B07B17757A5AC333601"/>
+      <item type="transform" name="Generate_ReturnDQProcessing_Input_Trf" guid="4C1A6F3F7CEC4F89A87D383B4C99B7C9"/>
+      <item type="sreg" name="planfolderloc"/>
+   </dependencies>
+   <trace>
+      <item>Compiling for repository</item>
+      <item>start recognized at 1</item>
+      <item>Request to compile _sreg(planfolderloc)</item>
+      <item>Sreg planfolderloc in node 6 found in expression _sreg(planfolderloc)</item>
+      <item>switch recognized at 6 switch: _sreg(planfolderloc)</item>
+      <item>end recognized for &apos;End&apos; at 2</item>
+      <item>junction source recognized at node Junction (key 25) link to target junction_Junction</item>
+      <item>junction source recognized at node Junction (key 25) link to target junction_Junction</item>
+      <item>junction source recognized at node Junction (key 25) link to target junction_Junction</item>
+      <item>junction source recognized at node Junction (key 25) link to target junction_Junction</item>
+      <item>There are 31 relations</item>
+   </trace>
+</flow>

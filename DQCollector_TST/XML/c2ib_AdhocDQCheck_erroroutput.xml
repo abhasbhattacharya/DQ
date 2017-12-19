@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<eda>
+   <error timestamp="2017-11-01T09:59:01Z" code="9" stage="FLOW" source="com.ibi.agents.XDPFlowAgent">Process flow failed, exception message: c2ib_getFile_httpEmitAgent has no wired edges to follow; node c2ib_getFile_httpEmitAgent returned edges: fail_connect
+      <data type="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&lt;c2ib_AdhocDQCheck&gt;&lt;callbackReference&gt;Plans\SamplePlan.plan&lt;/callbackReference&gt;&lt;planReference&gt;Plans\SamplePlan.plan&lt;/planReference&gt;&lt;responseURL&gt;http://www.sample-videos.com/xls/Sample-Spreadsheet-10-rows.xls&lt;/responseURL&gt;&lt;/c2ib_AdhocDQCheck&gt;</data>
+   </error>
+</eda>
